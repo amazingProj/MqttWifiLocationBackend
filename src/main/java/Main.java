@@ -61,38 +61,23 @@ public class Main {
             //System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
 
             //System.out.println(publish.getTopic());
-
-            if (Objects.equals(publish.getTopic().toString(), topic1)){
+            if (Objects.equals(publish.getTopic().toString(), topic)){
+                //System.out.println("success");
+            }
+            else if (Objects.equals(publish.getTopic().toString(), topic1)){
                 //System.out.println("success");
                 androidPayloadDecoder.Decode(UTF_8.decode(publish.getPayload().get()).toString());
             }
             //client.disconnect();
         });
 
+        // needs a listener when a message comes and prepared sent it to the mqtt broker
         /**
          * Publish "Hello" to the topic "my/test/topic" with qos = 2.
          */
         client.publishWith()
                 .topic("users/android/location")
                 .payload(UTF_8.encode("{coordinates:{x:3,y:3}}"))
-                .qos(MqttQos.EXACTLY_ONCE)
-                .send();
-
-        /**
-         * Publish "Hello" to the topic "my/test/topic" with qos = 2.
-         */
-        client.publishWith()
-                .topic("users/android/location")
-                .payload(UTF_8.encode("{cordinates:{x:3,y:3}}"))
-                .qos(MqttQos.EXACTLY_ONCE)
-                .send();
-
-        /**
-         * Publish "Hello" to the topic "my/test/topic" with qos = 2.
-         */
-        client.publishWith()
-                .topic("users/esp32/location")
-                .payload(UTF_8.encode("{cordinates:{x:1,y:2}}"))
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
 

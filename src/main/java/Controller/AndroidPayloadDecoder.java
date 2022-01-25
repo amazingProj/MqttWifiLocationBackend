@@ -1,40 +1,39 @@
 package Controller;
 
 import Controller.Android.PayloadInformation;
+import Model.AndroidDataHandler.FindUserLocation;
 import com.google.gson.*;
 
 import java.util.Iterator;
 
 public class AndroidPayloadDecoder {
-    public AndroidPayloadDecoder(){
+    FindUserLocation indoorUserLocation = new FindUserLocation();
+
+    public AndroidPayloadDecoder() {
 
     }
 
-    public void Decode(String androidMessage){
-        if (androidMessage == null){
-            return;
+    public JsonObject Decode(String androidMessage) {
+        if (androidMessage == null) {
+            return null;
         }
-
+        JsonObject result = null;
         JsonParser parser = new JsonParser();
-       try {
-           JsonObject obj = parser.parse(androidMessage).getAsJsonObject();
-           String keyOf = "NumberOfAccessPoints";
-           System.out.println("this is an obj");
+        try {
+            JsonObject obj = parser.parse(androidMessage).getAsJsonObject();
+            String keyOf = "NumberOfAccessPoints";
+            System.out.println("this is an obj");
+            JsonElement i = obj.get(keyOf);
+            if (i.getAsInt() > 0) {
+                result = indoorUserLocation.FindAndroidUserLocation(obj);
+            }
 
-           if (Integer.parseInt(obj.get(keyOf).toString()) > 0){
-               System.out.println("Yessss");
-           }
-           Iterator<String> keys = obj.keySet().iterator();
-
-           while (keys.hasNext()) {
-               String key = keys.next();
-               System.out.println("Key :" + key + "  Value :" + obj.get(key));
-           }
-       } catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
-       }
+        }
 
 
         System.out.println("");
+        return result;
     }
 }
