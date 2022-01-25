@@ -1,7 +1,10 @@
 
+import Controller.AndroidPayloadDecoder;
 import com.hivemq.client.mqtt.MqttClient;
 import com.hivemq.client.mqtt.datatypes.MqttQos;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
+
+import java.util.Objects;
 
 import static com.hivemq.client.mqtt.MqttGlobalPublishFilter.ALL;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -15,6 +18,7 @@ public class Main {
         final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
         final String username = "Esp32";
         final String password = "Esp32Asaf";
+        final AndroidPayloadDecoder androidPayloadDecoder = new AndroidPayloadDecoder();
 
         /**
          * Building the client with ssl.
@@ -54,8 +58,14 @@ public class Main {
          * Then disconnect the client after a message was received.
          */
         client.toAsync().publishes(ALL, publish -> {
-            System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
+            //System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
 
+            //System.out.println(publish.getTopic());
+
+            if (Objects.equals(publish.getTopic().toString(), topic1)){
+                //System.out.println("success");
+                androidPayloadDecoder.Decode(UTF_8.decode(publish.getPayload().get()).toString());
+            }
             //client.disconnect();
         });
 
