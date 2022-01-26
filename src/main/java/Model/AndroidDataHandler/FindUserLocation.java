@@ -64,6 +64,9 @@ public class FindUserLocation {
             else if (key.equals("isAlarmedOn")){
                 information.setAlarmed(obj.get(key).getAsBoolean());
             }
+            else if (key.equals("NumberOfAccessPoints")){
+                information.setNumberOfAccessPoint(obj.get(key).getAsInt());
+            }
             System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
         if (information.getAccessPointsLength() <= 2){
