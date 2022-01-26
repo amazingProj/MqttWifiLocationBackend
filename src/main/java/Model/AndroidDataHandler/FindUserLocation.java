@@ -75,13 +75,6 @@ public class FindUserLocation {
                     nested.setY(coordinates.getY());
                     nested.setZ(coordinates.getZ());
                     myList.add(nested);
-                    double d = 0;
-                    //d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accssesPoint.getRssi(), accssesPoint.getFrequency()));
-                    d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
-                    if (d > 0){
-                        distances.add(d);
-                    }
-                    System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), d, accessPoint.getRssi());
                 }
             }
             else if (key.equals("specialIdNumber")) {
@@ -99,28 +92,27 @@ public class FindUserLocation {
             return null;
         }
 
-
-
-        for (AccessPoint accssesPoint:
-                information.getAccessPoints()) {
-                double d = 0;
-                //d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accssesPoint.getRssi(), accssesPoint.getFrequency()));
-                d = calc.CalculateNormalDistanceByFrequencyAndRssi(accssesPoint.getRssi(), accssesPoint.getFrequency());
-                if (d > 0){
-                    distances.add(d);
-                }
-                System.out.printf("%s  %.4f   rssi is %d \n",accssesPoint.getBssid(), d, accssesPoint.getRssi());
-
+        double d;
+        for (AccessPoint accessPoint:
+                information.getAccessPoints()){
+            d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency()));
+            //d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
+            if (d > 0){
+                distances.add(d);
+            }
+            System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), d, accessPoint.getRssi());
         }
 
-        int size = 3;
+        int size = 2;
         Coordinates cor;
         double[][] target = new double[myList.size()][size];
         for (int i = 0; i < target.length; ++i) {
             cor = myList.get(i);
             target[i][0] = cor.getX();
             target[i][1] = cor.getY();
-            target[i][2] = cor.getZ();
+            if (size == 3){
+                target[i][2] = cor.getZ();
+            }
         }
 
         double[] distancesPrimitive = new double[distances.size()];
