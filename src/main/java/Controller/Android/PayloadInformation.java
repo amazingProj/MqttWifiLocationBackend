@@ -13,6 +13,17 @@ public class PayloadInformation {
         return accessPoints;
     }
 
+    public int getAccessPointsLength(){
+        return accessPoints.size();
+    }
+
+    public void addAccessPoint(AccessPoint accessPoint){
+        if (accessPoint == null){
+            return;
+        }
+        accessPoints.add(accessPoint);
+    }
+
     public void setAccessPoints(List<AccessPoint> accessPoints) {
         this.accessPoints = accessPoints;
     }

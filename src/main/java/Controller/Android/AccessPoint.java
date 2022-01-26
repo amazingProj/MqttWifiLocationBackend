@@ -1,7 +1,7 @@
 package Controller.Android;
 
 public class AccessPoint {
-    int rssi;
+    int Rssi;
     String Ssid;
     String Bssid;
     int frequency;
@@ -31,18 +31,18 @@ public class AccessPoint {
     }
 
     public int getRssi() {
-        return rssi;
+        return Rssi;
     }
 
     public void setRssi(int rssi) {
-        this.rssi = rssi;
+        this.Rssi = rssi;
     }
 
 
     @Override
     public String toString() {
         return "AccessPoint{" +
-                "rssi=" + rssi +
+                "rssi=" + Rssi +
                 ", Ssid='" + Ssid + '\'' +
                 ", Bssid='" + Bssid + '\'' +
                 ", frequency=" + frequency +

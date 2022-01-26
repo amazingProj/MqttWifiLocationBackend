@@ -24,7 +24,7 @@ public class AndroidPayloadDecoder {
             String keyOf = "NumberOfAccessPoints";
             System.out.println("this is an obj");
             JsonElement i = obj.get(keyOf);
-            if (i.getAsInt() > 0) {
+            if (i.getAsInt() > 2) {
                 result = indoorUserLocation.FindAndroidUserLocation(obj);
             }
 
