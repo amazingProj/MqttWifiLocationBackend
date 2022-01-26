@@ -1,5 +1,6 @@
 package Model.AndroidDataHandler;
 
+import Algorithms.DistanceCalculator;
 import Controller.Android.AccessPoint;
 import Controller.Android.PayloadInformation;
 import Model.Coordinates;
@@ -30,6 +31,8 @@ public class FindUserLocation {
         if (obj == null){
             return null;
         }
+
+        DistanceCalculator calc = new DistanceCalculator();
 
         JsonObject result = new JsonObject();
 
@@ -67,14 +70,18 @@ public class FindUserLocation {
             else if (key.equals("NumberOfAccessPoints")){
                 information.setNumberOfAccessPoint(obj.get(key).getAsInt());
             }
-            System.out.println("Key :" + key + "  Value :" + obj.get(key));
+            //System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
         if (information.getAccessPointsLength() <= 2){
             return null;
         }
 
-        System.out.println("check point!!!!");
-
+        for (AccessPoint accssesPoint:
+                information.getAccessPoints()) {
+                double d = 0;
+                d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accssesPoint.getRssi(), accssesPoint.getFrequency()));
+                System.out.printf("%s  %.4f   rssi is %d \n",accssesPoint.getBssid(), d, accssesPoint.getRssi());
+        }
 
         return null;
     }
