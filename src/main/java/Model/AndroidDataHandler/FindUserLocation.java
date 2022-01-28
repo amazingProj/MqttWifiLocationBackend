@@ -1,19 +1,15 @@
 package Model.AndroidDataHandler;
 
 import Algorithms.DistanceCalculator;
+import Algorithms.Trilateration.NonLinearLeastSquaresSolver;
+import Algorithms.Trilateration.TrilaterationFunction;
 import Controller.Android.AccessPoint;
 import Controller.Android.PayloadInformation;
 import Model.Coordinates;
 import Model.ValidAccessPoint;
 import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
-import com.lemmingapex.trilateration.NonLinearLeastSquaresSolver;
-import com.lemmingapex.trilateration.TrilaterationFunction;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
-
-import java.io.StringReader;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,17 +17,6 @@ import java.util.List;
 public class FindUserLocation {
     public FindUserLocation(){
 
-    }
-
-    public String removeFirstandLast(String str)
-    {
-
-        // Removing first and last character
-        // of a string using substring() method
-        str = str.substring(1, str.length() - 1);
-
-        // Return the modified string
-        return str;
     }
 
     public JsonObject FindAndroidUserLocation(JsonObject obj){
@@ -95,8 +80,8 @@ public class FindUserLocation {
         double d;
         for (AccessPoint accessPoint:
                 information.getAccessPoints()){
-            d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency()));
-            //d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
+            //d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency()));
+            d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
             if (d > 0){
                 distances.add(d);
             }
@@ -126,10 +111,17 @@ public class FindUserLocation {
 
         double[] centroid = optimum.getPoint().toArray();
 
+
         for (int i = 0; i < centroid.length; ++i){
             System.out.printf("%.1f\n", centroid[i]);
         }
 
-        return null;
+        result.addProperty("x", centroid[0]);
+        result.addProperty("y", centroid[1]);
+
+        result.addProperty("ID", information.getSpecialId());
+        result.addProperty("FloorLevel", "4");
+        result.addProperty("BATTERY", "100%");
+        return result;
     }
 }

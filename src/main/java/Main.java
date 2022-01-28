@@ -72,6 +72,8 @@ public class Main {
         });
 
         // needs a listener when a message comes and prepared sent it to the mqtt broker
+
+
         /**
          * Publish "Hello" to the topic "my/test/topic" with qos = 2.
          */
