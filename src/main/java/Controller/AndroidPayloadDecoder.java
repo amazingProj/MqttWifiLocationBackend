@@ -1,10 +1,7 @@
 package Controller;
 
-import Controller.Android.PayloadInformation;
 import Model.AndroidDataHandler.FindUserLocation;
 import com.google.gson.*;
-
-import java.util.Iterator;
 
 public class AndroidPayloadDecoder {
     FindUserLocation indoorUserLocation = new FindUserLocation();

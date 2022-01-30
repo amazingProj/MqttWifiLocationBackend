@@ -1,5 +1,6 @@
-
-import Controller.AndroidPayloadDecoder;
+import Controller.EventsHandler;
+import Controller.Observer;
+import com.google.gson.JsonObject;
 import com.hivemq.client.mqtt.MqttClient;
 import com.hivemq.client.mqtt.datatypes.MqttQos;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
@@ -9,8 +10,13 @@ import java.util.Objects;
 import static com.hivemq.client.mqtt.MqttGlobalPublishFilter.ALL;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Main {
+public class Main implements Observer {
+    private static Mqtt5BlockingClient clientSender;
+    private static EventsHandler eventsHandler = new EventsHandler();
 
+    public Main(){
+        eventsHandler.addObserverPublishLocationEvent(this);
+    }
 
     public static void main(String[] args) {
         final String topic1 = "mqtt/android/wifi/messages";
@@ -18,7 +24,6 @@ public class Main {
         final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
         final String username = "Esp32";
         final String password = "Esp32Asaf";
-        final AndroidPayloadDecoder androidPayloadDecoder = new AndroidPayloadDecoder();
 
         /**
          * Building the client with ssl.
@@ -44,7 +49,7 @@ public class Main {
                 .send();
 
         System.out.println("Connected successfully");
-
+        clientSender = client;
         /**
          * Subscribe to the topic "my/test/topic" with qos = 2 and print the received message.
          */
@@ -66,31 +71,31 @@ public class Main {
             }
             else if (Objects.equals(publish.getTopic().toString(), topic1)){
                 //System.out.println("success");
-                androidPayloadDecoder.Decode(UTF_8.decode(publish.getPayload().get()).toString());
+               eventsHandler.messageArriveEvent(UTF_8.decode(publish.getPayload().get()).toString(), topic1);
             }
             //client.disconnect();
         });
+    }
 
-        // needs a listener when a message comes and prepared sent it to the mqtt broker
 
-
+    @Override
+    public void publishMessage(JsonObject payload) {
         /**
          * Publish "Hello" to the topic "my/test/topic" with qos = 2.
          */
-        client.publishWith()
+        clientSender.publishWith()
                 .topic("users/android/location")
-                .payload(UTF_8.encode("{coordinates:{x:3,y:3}}"))
+                .payload(UTF_8.encode(payload.toString()))
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
 
         /**
          * Publish "Hello" to the topic "my/test/topic" with qos = 2.
          */
-        client.publishWith()
+        clientSender.publishWith()
                 .topic("users/esp32/location")
                 .payload(UTF_8.encode("{cordinates:{x:1,y:2}}"))
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
     }
-
 }
