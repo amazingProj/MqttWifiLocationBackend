@@ -1,15 +1,18 @@
 package Model.AndroidDataHandler;
 
 import Algorithms.DistanceCalculator;
-import Algorithms.Trilateration.NonLinearLeastSquaresSolver;
-import Algorithms.Trilateration.TrilaterationFunction;
-import Controller.Android.AccessPoint;
-import Controller.Android.PayloadInformation;
+import Algorithms.NonLinearLeastSquaresSolver;
+import Algorithms.TrilaterationFunction;
+import Controller.AccessPoint;
+import Controller.PayloadInformation;
 import Model.Coordinates;
 import Model.ValidAccessPoint;
 import com.google.gson.*;
+import com.google.gson.stream.JsonReader;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
+
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -49,18 +52,22 @@ public class FindUserLocation {
             if (key.startsWith("AccessPoint")){
                 //JsonReader reader = new JsonReader(new StringReader(obj.get(key).toString()));
                 //reader.setLenient(true);
-               //AccessPoint accessPoint = gson.fromJson(reader, AccessPoint.class);
-                JsonElement el = obj.get(key);
+                //AccessPoint accessPoint = gson.fromJson(reader, AccessPoint.class);
+                //JsonElement el = obj.get(key);
                 AccessPoint accessPoint = gson.fromJson(obj.get(key).getAsString(), AccessPoint.class);
+                double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
+                System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
+                //double _d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
+                //System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), _d, accessPoint.getRssi());
                 Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
                 if (accessPoint.getSsid().equals("JCT-Lev-WiFi") && coordinates != null){
                     // the model contains this
-                    information.addAccessPoint(accessPoint);
-                    nested.setX(coordinates.getX());
-                    nested.setY(coordinates.getY());
-                    nested.setZ(coordinates.getZ());
-                    myList.add(nested);
-                }
+                   information.addAccessPoint(accessPoint);
+                   nested.setX(coordinates.getX());
+                   nested.setY(coordinates.getY());
+                   nested.setZ(coordinates.getZ());
+                   myList.add(nested);
+               }
             }
             else if (key.equals("specialIdNumber")) {
                 information.setSpecialId(obj.get(key).getAsInt());
@@ -73,9 +80,11 @@ public class FindUserLocation {
             }
             //System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
+
         if (information.getAccessPointsLength() <= 2){
             return null;
         }
+
 
         double d;
         for (AccessPoint accessPoint:

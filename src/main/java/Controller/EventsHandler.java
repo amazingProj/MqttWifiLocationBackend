@@ -13,19 +13,22 @@ public class EventsHandler {
     }
 
     public void messageArriveEvent(String wifiScanMessage, String topic){
+        if (topic.equals("users/wifi/scan")){
+            return;
+        }
         final AndroidPayloadDecoder androidPayloadDecoder = new AndroidPayloadDecoder();
         JsonObject result = androidPayloadDecoder.Decode(wifiScanMessage);
         if (result != null){
-            notifyAllUserLocationObservers(result);
+            notifyAllUserLocationObservers(result, "users/devices/location");
         }
     }
 
-    public void notifyAllUserLocationObservers(JsonObject message){
+    public void notifyAllUserLocationObservers(JsonObject message, String topic){
         if (observerListPublishLocationEvent.isEmpty()) return;
         for (Observer observer
         :
         observerListPublishLocationEvent){
-            observer.publishMessage(message);
+            observer.publishMessage(message, topic);
         }
     }
 }

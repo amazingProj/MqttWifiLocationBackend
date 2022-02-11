@@ -1,4 +1,4 @@
-package Controller.Android;
+package Controller;
 
 public class AccessPoint {
     int Rssi;

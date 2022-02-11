@@ -1,4 +1,6 @@
-package Controller.Android;
+package Controller;
+
+import Controller.AccessPoint;
 
 import java.util.ArrayList;
 import java.util.List;

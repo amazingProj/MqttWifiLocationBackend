@@ -1,4 +1,4 @@
-package Algorithms.Trilateration;
+package Algorithms;
 
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresFactory;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;

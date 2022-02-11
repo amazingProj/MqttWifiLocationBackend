@@ -10,6 +10,10 @@ import java.util.Objects;
 import static com.hivemq.client.mqtt.MqttGlobalPublishFilter.ALL;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+/**
+ * class represents the main program of the server
+ * includes main function
+ */
 public class Main implements Observer {
     private static Mqtt5BlockingClient clientSender;
     private static EventsHandler eventsHandler = new EventsHandler();
@@ -54,23 +58,25 @@ public class Main implements Observer {
          * Subscribe to the topic "my/test/topic" with qos = 2 and print the received message.
          */
         client.subscribeWith()
-                .topicFilter(topic1)
+                .topicFilter(topic)
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
 
+        client.subscribeWith()
+                .topicFilter(topic1)
+                .qos(MqttQos.EXACTLY_ONCE)
+                .send();
         /**
          * Set a callback that is called when a message is received (using the async API style).
          * Then disconnect the client after a message was received.
          */
         client.toAsync().publishes(ALL, publish -> {
-            //System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
+            System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
 
-            //System.out.println(publish.getTopic());
             if (Objects.equals(publish.getTopic().toString(), topic)){
-                //System.out.println("success");
+                eventsHandler.messageArriveEvent(UTF_8.decode(publish.getPayload().get()).toString(), topic);
             }
             else if (Objects.equals(publish.getTopic().toString(), topic1)){
-                //System.out.println("success");
                eventsHandler.messageArriveEvent(UTF_8.decode(publish.getPayload().get()).toString(), topic1);
             }
             //client.disconnect();
@@ -79,22 +85,10 @@ public class Main implements Observer {
 
 
     @Override
-    public void publishMessage(JsonObject payload) {
-        /**
-         * Publish "Hello" to the topic "my/test/topic" with qos = 2.
-         */
+    public void publishMessage(JsonObject payload, String topic) {
         clientSender.publishWith()
-                .topic("users/android/location")
+                .topic(topic)
                 .payload(UTF_8.encode(payload.toString()))
-                .qos(MqttQos.EXACTLY_ONCE)
-                .send();
-
-        /**
-         * Publish "Hello" to the topic "my/test/topic" with qos = 2.
-         */
-        clientSender.publishWith()
-                .topic("users/esp32/location")
-                .payload(UTF_8.encode("{cordinates:{x:1,y:2}}"))
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
     }
