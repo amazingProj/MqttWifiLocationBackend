@@ -23,8 +23,8 @@ public class Main implements Observer {
     }
 
     public static void main(String[] args) {
-        final String topic1 = "mqtt/android/wifi/messages";
-        final String topic = "users/wifi/scan";
+        final String androidTopic = "mqtt/android/wifi/messages";
+        final String espTopic = "users/wifi/scan";
         final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
         final String username = "Esp32";
         final String password = "Esp32Asaf";
@@ -53,17 +53,19 @@ public class Main implements Observer {
                 .send();
 
         System.out.println("Connected successfully");
+        // init a global client
         clientSender = client;
+
         /**
-         * Subscribe to the topic "my/test/topic" with qos = 2 and print the received message.
+         * Subscribe to the espTopic
          */
         client.subscribeWith()
-                .topicFilter(topic)
+                .topicFilter(espTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
 
         client.subscribeWith()
-                .topicFilter(topic1)
+                .topicFilter(androidTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
         /**
@@ -72,12 +74,15 @@ public class Main implements Observer {
          */
         client.toAsync().publishes(ALL, publish -> {
             System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
+            String messageReceived = UTF_8.decode(publish.getPayload().get()).toString();
+            String topic = publish.getTopic().toString();
 
-            if (Objects.equals(publish.getTopic().toString(), topic)){
-                eventsHandler.messageArriveEvent(UTF_8.decode(publish.getPayload().get()).toString(), topic);
+            eventsHandler.messageArriveEvent(messageReceived, topic);
+            if (Objects.equals(topic, espTopic)){
+                eventsHandler.messageArriveEvent(messageReceived, espTopic);
             }
-            else if (Objects.equals(publish.getTopic().toString(), topic1)){
-               eventsHandler.messageArriveEvent(UTF_8.decode(publish.getPayload().get()).toString(), topic1);
+            else if (Objects.equals(topic, androidTopic)){
+               eventsHandler.messageArriveEvent(messageReceived, androidTopic);
             }
             //client.disconnect();
         });

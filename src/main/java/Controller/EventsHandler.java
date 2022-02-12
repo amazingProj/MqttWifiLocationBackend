@@ -1,5 +1,6 @@
 package Controller;
 
+
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +14,15 @@ public class EventsHandler {
     }
 
     public void messageArriveEvent(String wifiScanMessage, String topic){
+        JsonObject result = null;
         if (topic.equals("users/wifi/scan")){
             return;
         }
-        final AndroidPayloadDecoder androidPayloadDecoder = new AndroidPayloadDecoder();
-        JsonObject result = androidPayloadDecoder.Decode(wifiScanMessage);
+        else if (topic.equals("mqtt/android/wifi/messages")){
+            final AndroidPayloadDecoder androidPayloadDecoder = new AndroidPayloadDecoder();
+            result = androidPayloadDecoder.Decode(wifiScanMessage);
+        }
+
         if (result != null){
             notifyAllUserLocationObservers(result, "users/devices/location");
         }

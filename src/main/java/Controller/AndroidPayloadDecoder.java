@@ -3,13 +3,14 @@ package Controller;
 import Model.AndroidDataHandler.FindUserLocation;
 import com.google.gson.*;
 
-public class AndroidPayloadDecoder {
+public class AndroidPayloadDecoder implements Decoder{
     FindUserLocation indoorUserLocation = new FindUserLocation();
 
     public AndroidPayloadDecoder() {
 
     }
 
+    @Override
     public JsonObject Decode(String androidMessage) {
         if (androidMessage == null) {
             return null;

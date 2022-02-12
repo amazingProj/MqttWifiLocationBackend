@@ -16,6 +16,7 @@ dependencies {
     implementation(platform("com.hivemq:hivemq-mqtt-client-websocket:1.2.2"))
     implementation 'com.google.code.gson:gson:2.8.4'
     implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.mongodb:mongodb-driver-reactivestreams:4.1.2'
 }
 
 test {
