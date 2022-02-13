@@ -78,12 +78,7 @@ public class Main implements Observer {
             String topic = publish.getTopic().toString();
 
             eventsHandler.messageArriveEvent(messageReceived, topic);
-            if (Objects.equals(topic, espTopic)){
-                eventsHandler.messageArriveEvent(messageReceived, espTopic);
-            }
-            else if (Objects.equals(topic, androidTopic)){
-               eventsHandler.messageArriveEvent(messageReceived, androidTopic);
-            }
+            
             //client.disconnect();
         });
     }

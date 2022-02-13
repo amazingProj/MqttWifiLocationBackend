@@ -50,15 +50,9 @@ public class FindUserLocation {
             String key = keys.next();
 
             if (key.startsWith("AccessPoint")){
-                //JsonReader reader = new JsonReader(new StringReader(obj.get(key).toString()));
-                //reader.setLenient(true);
-                //AccessPoint accessPoint = gson.fromJson(reader, AccessPoint.class);
-                //JsonElement el = obj.get(key);
                 AccessPoint accessPoint = gson.fromJson(obj.get(key).getAsString(), AccessPoint.class);
                 double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
                 System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
-                //double _d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
-                //System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), _d, accessPoint.getRssi());
                 Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
                 if (accessPoint.getSsid().equals("JCT-Lev-WiFi") && coordinates != null){
                     // the model contains this
@@ -85,12 +79,12 @@ public class FindUserLocation {
             return null;
         }
 
-
         double d;
         for (AccessPoint accessPoint:
                 information.getAccessPoints()){
             //d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency()));
-            d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
+            //d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
+            d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
             if (d > 0){
                 distances.add(d);
             }

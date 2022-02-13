@@ -20,7 +20,6 @@ public class AndroidPayloadDecoder implements Decoder{
         try {
             JsonObject obj = parser.parse(androidMessage).getAsJsonObject();
             String keyOf = "NumberOfAccessPoints";
-            System.out.println("this is an obj");
             JsonElement i = obj.get(keyOf);
             if (i.getAsInt() > 2) {
                 result = indoorUserLocation.FindAndroidUserLocation(obj);
