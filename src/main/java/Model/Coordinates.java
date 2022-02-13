@@ -1,9 +1,17 @@
 package Model;
 
-public class Coordinates {
+import java.util.Collection;
+
+public class Coordinates{
     double x;
     double y;
     double z;
+
+    public Coordinates(Coordinates coordinates){
+        x = coordinates.getX();
+        y = coordinates.getY();
+        z = coordinates.getZ();
+    }
 
     public Coordinates(double _x, double _y, double _z) {
         x = _x;

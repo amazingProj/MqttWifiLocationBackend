@@ -1,5 +1,6 @@
 import Controller.EventsHandler;
 import Controller.Observer;
+import Controller.Sender;
 import com.google.gson.JsonObject;
 import com.hivemq.client.mqtt.MqttClient;
 import com.hivemq.client.mqtt.datatypes.MqttQos;
@@ -11,12 +12,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * class represents the main program of the server
  * includes main function
  */
-public class Main implements Observer {
-    private static Mqtt5BlockingClient clientSender;
+public class Main {
     private static final EventsHandler eventsHandler = new EventsHandler();
 
     public Main(){
-        eventsHandler.addObserverPublishLocationEvent(this);
+
     }
 
     public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Main implements Observer {
 
         System.out.println("Connected successfully");
         // init a global client
-        clientSender = client;
+        eventsHandler.addObserverPublishLocationEvent(new Sender(client));
 
         client.subscribeWith()
                 .topicFilter(espTopic)
@@ -68,15 +68,5 @@ public class Main implements Observer {
             
             //client.disconnect();
         });
-    }
-
-
-    @Override
-    public void publishMessage(JsonObject payload, String topic) {
-        clientSender.publishWith()
-                .topic(topic)
-                .payload(UTF_8.encode(payload.toString()))
-                .qos(MqttQos.EXACTLY_ONCE)
-                .send();
     }
 }

@@ -1,10 +1,12 @@
 package Model.ESP32WiFiScanHandler;
 
+import Algorithms.CirclesIntersection;
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
 import Controller.AccessPointSentByEsp32;
 import Controller.PayloadInformationSentByEsp32;
+import Model.Circle;
 import Model.Coordinates;
 import Model.ValidAccessPoint;
 import com.google.gson.Gson;
@@ -16,6 +18,7 @@ import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 public class FindUserLocation {
     public FindUserLocation(){
@@ -35,7 +38,6 @@ public class FindUserLocation {
         Gson gson = builder.create();
         ValidAccessPoint valid = new ValidAccessPoint();
         List<Coordinates> myList = new ArrayList<Coordinates>();
-        Coordinates nested = new Coordinates();
         Iterator<String> keys = obj.keySet().iterator();
 
         while (keys.hasNext()) {
@@ -45,14 +47,12 @@ public class FindUserLocation {
                 AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
                 double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
                 System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
-                Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
-                if (accessPoint.getSsid().equals("JCT-Lev-WiFi") && coordinates != null){
+                System.out.println(accessPoint.getBssid().toLowerCase());
+                Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid().toLowerCase());
+                if (/*(accessPoint.getSsid().equals("JCT-Lev-WiFi") || true) &&*/ coordinates != null){
                     // the model contains this
                     information.addAccessPoint(accessPoint);
-                    nested.setX(coordinates.getX());
-                    nested.setY(coordinates.getY());
-                    nested.setZ(coordinates.getZ());
-                    myList.add(nested);
+                    myList.add(new Coordinates(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
                 }
             }
             else if (key.equals("MacAddress")) {
@@ -67,7 +67,8 @@ public class FindUserLocation {
             System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
 
-        if (information.getAccessPointsLength() <= 2){
+
+        if (information.getAccessPointsLength() <= 1){
             return null;
         }
 
@@ -97,6 +98,25 @@ public class FindUserLocation {
         double[] distancesPrimitive = new double[distances.size()];
         for (int i = 0; i < distancesPrimitive.length; ++i) {
             distancesPrimitive[i] = distances.get(i);
+        }
+
+        if(information.getAccessPointsLength() == 2){
+            List<Coordinates> coordinates =
+                    new CirclesIntersection().FindTwoCirclesIntersections2D(new Circle(new Coordinates(target[0][0], target[0][1]),
+                            distancesPrimitive[0]),new Circle(new Coordinates(target[1][0], target[1][1]),
+                            distancesPrimitive[1]));
+            if (coordinates == null){
+                return null;
+            }
+            double newX = (coordinates.get(0).getX() + coordinates.get(1).getX()) / 2;
+            double newY = (coordinates.get(0).getY() + coordinates.get(1).getY()) / 2;
+            result.addProperty("x", Double.toString(newX));
+            result.addProperty("y", Double.toString(newY));
+
+            result.addProperty("ID", information.getMacAddress());
+            result.addProperty("FloorLevel", "4");
+            result.addProperty("BATTERY", information.getBattery());
+            return result;
         }
 
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(target, distancesPrimitive), new LevenbergMarquardtOptimizer());

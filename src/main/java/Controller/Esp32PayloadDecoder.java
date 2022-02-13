@@ -1,5 +1,6 @@
 package Controller;
 
+import Algorithms.CirclesIntersection;
 import Model.ESP32WiFiScanHandler.FindUserLocation;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -7,6 +8,7 @@ import com.google.gson.JsonParser;
 
 public class Esp32PayloadDecoder implements Decoder{
     FindUserLocation indoorUserLocation = new FindUserLocation();
+    CirclesIntersection intersections = new CirclesIntersection();
 
     @Override
     public JsonObject Decode(String esp32Message) {

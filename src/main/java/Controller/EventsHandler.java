@@ -44,7 +44,6 @@ public class EventsHandler {
                 System.out.println(message);
                 message = "";
             }
-            return;
         }
         else if (topic.equals("mqtt/android/wifi/messages")){
             final Decoder androidPayloadDecoder = new AndroidPayloadDecoder();

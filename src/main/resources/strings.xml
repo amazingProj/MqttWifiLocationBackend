@@ -8,4 +8,12 @@
             users/wifi/scan
         </esp32_topic>
     </topics>
+    <acknowledgement>
+        <android_ack>
+            ack/android
+        </android_ack>
+        <esp_ack>
+            ack/esp32
+        </esp_ack>
+    </acknowledgement>
 </class>

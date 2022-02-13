@@ -1,19 +1,19 @@
 package Model;
 
 public class Circle {
-    private Integer radius;
+    private double radius;
     private Coordinates middlePoint;
 
-    public Circle(Integer radius, Coordinates middlePoint) {
+    public Circle(Coordinates middlePoint, double radius) {
         this.radius = radius;
         this.middlePoint = middlePoint;
     }
 
-    public Integer getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public void setRadius(Integer radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 

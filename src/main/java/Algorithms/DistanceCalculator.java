@@ -3,7 +3,7 @@ package Algorithms;
 public class DistanceCalculator {
     private final double c = 27.55;
     // the rssi from AP which is given when d = 1 meter
-    private final int measuredPower = -69;
+    private final int measuredPower = -74;
     // low strength is 2 and high is 4, medium is 3
     private final int environmentalFactor = 2;
 
