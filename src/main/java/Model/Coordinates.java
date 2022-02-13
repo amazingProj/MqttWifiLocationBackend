@@ -11,6 +11,12 @@ public class Coordinates {
         z = _z;
     }
 
+    public Coordinates(double _x, double _y){
+        x = _x;
+        y = _y;
+        z = 0;
+    }
+
     public Coordinates() {
         x = 0;
         y = 0;

@@ -3,9 +3,7 @@ package Model.ESP32WiFiScanHandler;
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
-import Controller.AccessPoint;
 import Controller.AccessPointSentByEsp32;
-import Controller.PayloadInformation;
 import Controller.PayloadInformationSentByEsp32;
 import Model.Coordinates;
 import Model.ValidAccessPoint;
@@ -43,8 +41,8 @@ public class FindUserLocation {
         while (keys.hasNext()) {
             String key = keys.next();
 
-            if (key.matches("^[0-9]+")){
-                AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key).getAsString(), AccessPointSentByEsp32.class);
+           if (key.matches("^[0-9]+")){
+                AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
                 double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
                 System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
                 Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
@@ -66,7 +64,7 @@ public class FindUserLocation {
             else if (key.equals("NumberOfAccessPoints")){
                 information.setNumberOfAccessPoints(obj.get(key).getAsInt());
             }
-            //System.out.println("Key :" + key + "  Value :" + obj.get(key));
+            System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
 
         if (information.getAccessPointsLength() <= 2){
@@ -74,7 +72,8 @@ public class FindUserLocation {
         }
 
         double d;
-        for (AccessPointSentByEsp32 accessPoint:
+        for (AccessPointSentByEsp32 accessPoint
+                :
                 information.getAccessPoints()){
             d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
             if (d > 0){

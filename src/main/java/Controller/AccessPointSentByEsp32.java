@@ -1,7 +1,8 @@
 package Controller;
 
 public class AccessPointSentByEsp32 {
-     private String EspMacAddress;
+    //{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"34:49:5B:16:9D:E4","Rssi":-52,"Ssid":"benny"}
+    private String EspMacAddress;
     private String Bssid;
     private int Rssi;
     private String Ssid;

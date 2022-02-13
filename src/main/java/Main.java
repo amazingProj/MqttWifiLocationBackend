@@ -4,9 +4,6 @@ import com.google.gson.JsonObject;
 import com.hivemq.client.mqtt.MqttClient;
 import com.hivemq.client.mqtt.datatypes.MqttQos;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
-
-import java.util.Objects;
-
 import static com.hivemq.client.mqtt.MqttGlobalPublishFilter.ALL;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -16,7 +13,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class Main implements Observer {
     private static Mqtt5BlockingClient clientSender;
-    private static EventsHandler eventsHandler = new EventsHandler();
+    private static final EventsHandler eventsHandler = new EventsHandler();
 
     public Main(){
         eventsHandler.addObserverPublishLocationEvent(this);
@@ -29,9 +26,6 @@ public class Main implements Observer {
         final String username = "Esp32";
         final String password = "Esp32Asaf";
 
-        /**
-         * Building the client with ssl.
-         */
         final Mqtt5BlockingClient client = MqttClient.builder()
                 .useMqttVersion5()
                 .serverHost(host)
@@ -42,9 +36,6 @@ public class Main implements Observer {
                 .applyWebSocketConfig()
                 .buildBlocking();
 
-        /**
-         * Connect securely with username, password.
-         */
         client.connectWith()
                 .simpleAuth()
                 .username(username)
@@ -56,9 +47,6 @@ public class Main implements Observer {
         // init a global client
         clientSender = client;
 
-        /**
-         * Subscribe to the espTopic
-         */
         client.subscribeWith()
                 .topicFilter(espTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
@@ -68,10 +56,9 @@ public class Main implements Observer {
                 .topicFilter(androidTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
-        /**
-         * Set a callback that is called when a message is received (using the async API style).
-         * Then disconnect the client after a message was received.
-         */
+
+         // Set a callback that is called when a message is received (using the async API style).
+         // Then disconnect the client after a message was received.
         client.toAsync().publishes(ALL, publish -> {
             System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
             String messageReceived = UTF_8.decode(publish.getPayload().get()).toString();
