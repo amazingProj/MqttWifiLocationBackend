@@ -11,17 +11,21 @@ import com.google.gson.*;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
 
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 
 public class FindUserLocation {
     GsonBuilder builder;
     Gson gson;
+    NumberFormat nf;
 
     public FindUserLocation(){
         builder = new GsonBuilder();
         builder.setPrettyPrinting();
-        Gson gson = builder.create();
+        gson = builder.create();
+        nf = NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(3);
     }
     class route{
         private String accessPoint;
@@ -119,8 +123,8 @@ public class FindUserLocation {
             System.out.printf("%.1f\n", centroid[i]);
         }
 
-        result.addProperty("x", centroid[0]);
-        result.addProperty("y", centroid[1]);
+        result.addProperty("x", nf.format(centroid[0]));
+        result.addProperty("y", nf.format(centroid[1]));
 
         result.addProperty("ID", information.getSpecialId());
         result.addProperty("FloorLevel", "4");

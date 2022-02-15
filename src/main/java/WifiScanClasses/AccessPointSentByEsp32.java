@@ -1,11 +1,31 @@
 package WifiScanClasses;
 
+import Primitives.Coordinates;
+
 public class AccessPointSentByEsp32 {
     //{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"34:49:5B:16:9D:E4","Rssi":-52,"Ssid":"benny"}
     private String EspMacAddress;
     private String Bssid;
     private int Rssi;
     private String Ssid;
+    private Coordinates coordinates;
+    private double distance;
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
 
     public String getSsid() {
         return Ssid;

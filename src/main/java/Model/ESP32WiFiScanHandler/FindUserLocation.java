@@ -4,7 +4,9 @@ import Algorithms.CirclesIntersection;
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
+import WifiScanClasses.AccessPoint;
 import WifiScanClasses.AccessPointSentByEsp32;
+import WifiScanClasses.PayloadInformation;
 import WifiScanClasses.PayloadInformationSentByEsp32;
 import Geometries.Circle;
 import Primitives.Coordinates;
@@ -21,89 +23,21 @@ import java.util.Iterator;
 import java.util.List;
 
 public class FindUserLocation {
-    public FindUserLocation(){
+    GsonBuilder builder;
+    Gson gson;
+    NumberFormat nf;
 
+    public FindUserLocation() {
+        builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        gson = builder.create();
+        nf = NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(3);
     }
 
     public JsonObject FindEsp32UserLocation(JsonObject obj) {
-        if (obj == null){
-            return null;
-        }
-        List<Double> distances = new ArrayList();
-        DistanceCalculator calc = new DistanceCalculator();
-        JsonObject result = new JsonObject();
-        PayloadInformationSentByEsp32 information = new PayloadInformationSentByEsp32();
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
-        Gson gson = builder.create();
-        ValidAccessPoint valid = new ValidAccessPoint();
-        List<Coordinates> myList = new ArrayList<Coordinates>();
-        Iterator<String> keys = obj.keySet().iterator();
-
-        while (keys.hasNext()) {
-            String key = keys.next();
-
-           if (key.matches("^[0-9]+")){
-                AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
-                double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
-                System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
-                System.out.println(accessPoint.getBssid().toLowerCase());
-                Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid().toLowerCase());
-                if (/*(accessPoint.getSsid().equals("JCT-Lev-WiFi") || true) &&*/ coordinates != null){
-                    // the model contains this
-                    information.addAccessPoint(accessPoint);
-                    myList.add(new Coordinates(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
-                }
-            }
-            else if (key.equals("MacAddress")) {
-                information.setMacAddress(obj.get(key).getAsString());
-            }
-            else if (key.equals("isAlarmedOn")){
-                information.setAlarmed(obj.get(key).getAsBoolean());
-            }
-            else if (key.equals("NumberOfAccessPoints")){
-                information.setNumberOfAccessPoints(obj.get(key).getAsInt());
-            }
-            System.out.println("Key :" + key + "  Value :" + obj.get(key));
-        }
-
-
-        if (information.getAccessPointsLength() <= 1){
-            return null;
-        }
-
-        double d;
-        for (AccessPointSentByEsp32 accessPoint
-                :
-                information.getAccessPoints()){
-            d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
-            if (d > 0){
-                distances.add(d);
-            }
-            System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), d, accessPoint.getRssi());
-        }
-
-        int size = 2;
-        Coordinates cor;
-        double[][] target = new double[myList.size()][size];
-        for (int i = 0; i < target.length; ++i) {
-            cor = myList.get(i);
-            target[i][0] = cor.getX();
-            target[i][1] = cor.getY();
-            if (size == 3){
-                target[i][2] = cor.getZ();
-            }
-        }
-        result.addProperty("ID", information.getMacAddress());
-        result.addProperty("FloorLevel", "4");
-        result.addProperty("BATTERY", information.getBattery());
-
-        double[] distancesPrimitive = new double[distances.size()];
-        for (int i = 0; i < distancesPrimitive.length; ++i) {
-            distancesPrimitive[i] = distances.get(i);
-        }
-        NumberFormat nf = NumberFormat.getInstance();
-        nf.setMaximumFractionDigits(3);
+        if (obj == null) return null;
+        /*
         if(information.getAccessPointsLength() == 2){
             List<Coordinates> coordinates =
                     new CirclesIntersection().FindTwoCirclesIntersections2D(new Circle(new Coordinates(target[0][0], target[0][1]),
@@ -119,20 +53,91 @@ public class FindUserLocation {
 
             return result;
         }
+         */
+
+        DistanceCalculator calc = new DistanceCalculator();
+
+        JsonObject result = new JsonObject();
+
+        PayloadInformationSentByEsp32 information = new PayloadInformationSentByEsp32();
+
+        ValidAccessPoint valid = new ValidAccessPoint();
+
+        Iterator<String> keys = obj.keySet().iterator();
+
+        Coordinates coordinates;
+
+        double distance;
+
+        while (keys.hasNext()) {
+            String key = keys.next();
+
+            if (key.matches("^[0-9]+")){
+                AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
+                double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
+                System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
+                System.out.println(accessPoint.getBssid().toLowerCase());
+                coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid().toLowerCase());
+                if (coordinates != null) {
+                    accessPoint.setCoordinates(new Coordinates(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
+                    distance = calc.CalculateDistanceByRssi(accessPoint.getRssi());
+                    System.out.printf("%s  %.4f   rssi is %distance \n", accessPoint.getBssid(), distance, accessPoint.getRssi());
+                    accessPoint.setDistance(distance);
+                    information.addAccessPoint(accessPoint);
+                }
+            }
+           else if (key.equals("MacAddress")) {
+                information.setMacAddress(obj.get(key).getAsString());
+            } else if (key.equals("isAlarmedOn")) {
+                information.setAlarmed(obj.get(key).getAsBoolean());
+            } else if (key.equals("NumberOfAccessPoints")) {
+                information.setNumberOfAccessPoints(obj.get(key).getAsInt());
+            }
+        }
+
+        int numberOfValidAccessPoint = information.getAccessPointsLength();
+
+        if (numberOfValidAccessPoint < 2) {
+            return null;
+        }
+
+        int size = 3;
+
+        double[] distancesPrimitive = new double[numberOfValidAccessPoint];
+        List<AccessPointSentByEsp32> accessPoints = information.getAccessPoints();
+        AccessPointSentByEsp32 accessPoint;
+        double[][] target = new double[numberOfValidAccessPoint][size];
+
+        for (int i = 0; i < target.length; ++i) {
+            accessPoint = accessPoints.get(i);
+            distancesPrimitive[i] = accessPoint.getDistance();
+
+            coordinates = accessPoint.getCoordinates();
+            target[i][0] = coordinates.getX();
+            target[i][1] = coordinates.getY();
+            if (size == 3) {
+                target[i][2] = coordinates.getZ();
+            }
+        }
 
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(target, distancesPrimitive), new LevenbergMarquardtOptimizer());
+        solver.setMAX_NUMBER_OF_ITERATIONS(2000);
+        solver.setThreads(1);
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
-
 
         double[] centroid = optimum.getPoint().toArray();
 
 
-        for (int i = 0; i < centroid.length; ++i){
+        for (int i = 0; i < centroid.length; ++i) {
             System.out.printf("%.1f\n", centroid[i]);
         }
 
-        result.addProperty("x", centroid[0]);
-        result.addProperty("y", centroid[1]);
+        result.addProperty("x", nf.format(centroid[0]));
+        result.addProperty("y", nf.format(centroid[1]));
+
+        result.addProperty("ID", information.getMacAddress());
+        result.addProperty("FloorLevel", "4");
+        result.addProperty("BATTERY", information.getBattery() + "%");
         return result;
     }
 }
