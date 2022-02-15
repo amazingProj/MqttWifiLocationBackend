@@ -1,15 +1,21 @@
-package Controller;
+package WifiScanClasses;
 
-import Controller.AccessPoint;
+import WifiScanClasses.AccessPoint;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PayloadInformation {
+
+    /******************************** Properties *******************************************/
+
     int specialId;
     int numberOfAccessPoint;
     boolean isAlarmed;
     List<AccessPoint> accessPoints = new ArrayList<>();
+
+    /********************************* Getter and Setters **********************************/
+
 
     public List<AccessPoint> getAccessPoints() {
         return accessPoints;
@@ -56,11 +62,6 @@ public class PayloadInformation {
 
     @Override
     public String toString() {
-        // String accessPoint;
-        //for (AccessPoint accessPoint:
-        //     accessPoints) {
-
-        //}
         return "PayloadInformation{" +
                 "specialId=" + specialId +
                 ", numberOfAccessPoint=" + numberOfAccessPoint +

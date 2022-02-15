@@ -1,12 +1,11 @@
 package Algorithms;
 
-import Model.Circle;
-import Model.Coordinates;
+import Geometries.Circle;
+import Primitives.Coordinates;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
+
 import Utils.DoubleUtils;
 
 public class CirclesIntersection {

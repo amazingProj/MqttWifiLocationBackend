@@ -1,4 +1,6 @@
-package Controller;
+package WifiScanClasses;
+
+import WifiScanClasses.AccessPointSentByEsp32;
 
 import java.util.ArrayList;
 import java.util.List;

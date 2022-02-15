@@ -1,14 +1,19 @@
-package Controller;
+package WifiScanClasses;
 
-import Model.Coordinates;
+import Primitives.Coordinates;
 
 public class AccessPoint {
+
+    /******************************** Properties *******************************************/
+
     int Rssi;
     String Ssid;
     String Bssid;
     int frequency;
     private Coordinates coordinates;
     private double distance;
+
+    /********************************* Getter and Setters **********************************/
 
     public double getDistance() {
         return distance;
@@ -58,14 +63,15 @@ public class AccessPoint {
         this.Rssi = rssi;
     }
 
-
     @Override
     public String toString() {
         return "AccessPoint{" +
-                "rssi=" + Rssi +
+                "Rssi=" + Rssi +
                 ", Ssid='" + Ssid + '\'' +
                 ", Bssid='" + Bssid + '\'' +
                 ", frequency=" + frequency +
+                ", coordinates=" + coordinates +
+                ", distance=" + distance +
                 '}';
     }
 }

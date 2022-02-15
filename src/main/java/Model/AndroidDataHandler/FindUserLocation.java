@@ -3,17 +3,14 @@ package Model.AndroidDataHandler;
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
-import Controller.AccessPoint;
-import Controller.PayloadInformation;
-import Model.Coordinates;
+import WifiScanClasses.AccessPoint;
+import WifiScanClasses.PayloadInformation;
+import Primitives.Coordinates;
 import Model.ValidAccessPoint;
 import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
 
-import java.io.StringReader;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 

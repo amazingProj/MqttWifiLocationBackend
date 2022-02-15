@@ -4,10 +4,10 @@ import Algorithms.CirclesIntersection;
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
-import Controller.AccessPointSentByEsp32;
-import Controller.PayloadInformationSentByEsp32;
-import Model.Circle;
-import Model.Coordinates;
+import WifiScanClasses.AccessPointSentByEsp32;
+import WifiScanClasses.PayloadInformationSentByEsp32;
+import Geometries.Circle;
+import Primitives.Coordinates;
 import Model.ValidAccessPoint;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,7 +19,6 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 
 public class FindUserLocation {
     public FindUserLocation(){

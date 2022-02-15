@@ -1,5 +1,7 @@
 package Model;
 
+import Primitives.Coordinates;
+
 import java.util.HashMap;
 
 public class ValidAccessPoint {

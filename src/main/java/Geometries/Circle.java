@@ -1,4 +1,6 @@
-package Model;
+package Geometries;
+
+import Primitives.Coordinates;
 
 public class Circle {
     private double radius;

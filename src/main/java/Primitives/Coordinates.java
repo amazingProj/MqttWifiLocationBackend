@@ -1,6 +1,4 @@
-package Model;
-
-import java.util.Collection;
+package Primitives;
 
 public class Coordinates{
     double x;
