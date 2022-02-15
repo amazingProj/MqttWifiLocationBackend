@@ -23,7 +23,7 @@ public class NonLinearLeastSquaresSolver {
     private final TrilaterationFunction function;
     private final LeastSquaresOptimizer leastSquaresOptimizer;
 
-    private int MAX_NUMBER_OF_ITERATIONS = 2000;
+    private int MAX_NUMBER_OF_ITERATIONS = 1000;
     private int threads = 1;
 
     /*********************** Constructor ************************/

@@ -108,6 +108,8 @@ public class FindUserLocation {
         }
 
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(target, distancesPrimitive), new LevenbergMarquardtOptimizer());
+        solver.setMAX_NUMBER_OF_ITERATIONS(2000);
+        solver.setThreads(1);
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
 
         double[] centroid = optimum.getPoint().toArray();
