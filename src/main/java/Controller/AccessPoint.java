@@ -1,10 +1,30 @@
 package Controller;
 
+import Model.Coordinates;
+
 public class AccessPoint {
     int Rssi;
     String Ssid;
     String Bssid;
     int frequency;
+    private Coordinates coordinates;
+    private double distance;
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public int getFrequency() {
         return frequency;

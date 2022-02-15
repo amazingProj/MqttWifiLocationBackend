@@ -15,6 +15,7 @@ import com.google.gson.JsonObject;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -94,12 +95,16 @@ public class FindUserLocation {
                 target[i][2] = cor.getZ();
             }
         }
+        result.addProperty("ID", information.getMacAddress());
+        result.addProperty("FloorLevel", "4");
+        result.addProperty("BATTERY", information.getBattery());
 
         double[] distancesPrimitive = new double[distances.size()];
         for (int i = 0; i < distancesPrimitive.length; ++i) {
             distancesPrimitive[i] = distances.get(i);
         }
-
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(3);
         if(information.getAccessPointsLength() == 2){
             List<Coordinates> coordinates =
                     new CirclesIntersection().FindTwoCirclesIntersections2D(new Circle(new Coordinates(target[0][0], target[0][1]),
@@ -110,12 +115,9 @@ public class FindUserLocation {
             }
             double newX = (coordinates.get(0).getX() + coordinates.get(1).getX()) / 2;
             double newY = (coordinates.get(0).getY() + coordinates.get(1).getY()) / 2;
-            result.addProperty("x", Double.toString(newX));
-            result.addProperty("y", Double.toString(newY));
+            result.addProperty("x", nf.format(newX));
+            result.addProperty("y", nf.format(newY));
 
-            result.addProperty("ID", information.getMacAddress());
-            result.addProperty("FloorLevel", "4");
-            result.addProperty("BATTERY", information.getBattery());
             return result;
         }
 
@@ -132,10 +134,6 @@ public class FindUserLocation {
 
         result.addProperty("x", centroid[0]);
         result.addProperty("y", centroid[1]);
-
-        result.addProperty("ID", information.getMacAddress());
-        result.addProperty("FloorLevel", "4");
-        result.addProperty("BATTERY", information.getBattery());
         return result;
     }
 }

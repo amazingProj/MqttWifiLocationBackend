@@ -18,50 +18,61 @@ import java.util.Iterator;
 import java.util.List;
 
 public class FindUserLocation {
-    public FindUserLocation(){
+    GsonBuilder builder;
+    Gson gson;
 
+    public FindUserLocation(){
+        builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+    }
+    class route{
+        private String accessPoint;
+        private Double distances;
+        private Coordinates coordinates;
+
+        public route(String _accessPoint, Double _distances, Coordinates _coordinates){
+            accessPoint = _accessPoint;
+            distances = _distances;
+            coordinates = _coordinates;
+        }
+
+        public route(String _accessPoint, Double _distances){
+            accessPoint = _accessPoint;
+            distances = _distances;
+        }
     }
 
     public JsonObject FindAndroidUserLocation(JsonObject obj){
-        if (obj == null){
-            return null;
-        }
-        List<Double> distances = new ArrayList();
+        if (obj == null) return null;
 
         DistanceCalculator calc = new DistanceCalculator();
 
         JsonObject result = new JsonObject();
 
         PayloadInformation information = new PayloadInformation();
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
-
-        Gson gson = builder.create();
 
         ValidAccessPoint valid = new ValidAccessPoint();
 
-        List<Coordinates> myList = new ArrayList<Coordinates>();
-
-        Coordinates nested = new Coordinates();
-
         Iterator<String> keys = obj.keySet().iterator();
+
+        Coordinates coordinates;
+
+        double distance;
 
         while (keys.hasNext()) {
             String key = keys.next();
 
             if (key.startsWith("AccessPoint")){
                 AccessPoint accessPoint = gson.fromJson(obj.get(key).getAsString(), AccessPoint.class);
-                double d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
-                System.out.printf("%s \t %.3f\n", accessPoint.getBssid(), d);
-                Coordinates coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
-                if (accessPoint.getSsid().equals("JCT-Lev-WiFi") && coordinates != null){
-                    // the model contains this
+                coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
+                if (coordinates != null){
+                   accessPoint.setCoordinates(new Coordinates(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
+                   distance = calc.CalculateDistanceByRssi(accessPoint.getRssi());
+                   System.out.printf("%s  %.4f   rssi is %distance \n",accessPoint.getBssid(), distance, accessPoint.getRssi());
+                   accessPoint.setDistance(distance);
                    information.addAccessPoint(accessPoint);
-                   nested.setX(coordinates.getX());
-                   nested.setY(coordinates.getY());
-                   nested.setZ(coordinates.getZ());
-                   myList.add(nested);
-               }
+                }
             }
             else if (key.equals("specialIdNumber")) {
                 information.setSpecialId(obj.get(key).getAsInt());
@@ -72,45 +83,35 @@ public class FindUserLocation {
             else if (key.equals("NumberOfAccessPoints")){
                 information.setNumberOfAccessPoint(obj.get(key).getAsInt());
             }
-            //System.out.println("Key :" + key + "  Value :" + obj.get(key));
         }
 
-        if (information.getAccessPointsLength() <= 2){
+        int numberOfValidAccessPoint = information.getAccessPointsLength();
+
+        if (numberOfValidAccessPoint < 2){
             return null;
         }
 
-        double d;
-        for (AccessPoint accessPoint:
-                information.getAccessPoints()){
-            //d = calc.Find2DDistance(2.7,calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency()));
-            //d = calc.CalculateNormalDistanceByFrequencyAndRssi(accessPoint.getRssi(), accessPoint.getFrequency());
-            d = calc.CalculateDistanceByRssi(accessPoint.getRssi());
-            if (d > 0){
-                distances.add(d);
-            }
-            System.out.printf("%s  %.4f   rssi is %d \n",accessPoint.getBssid(), d, accessPoint.getRssi());
-        }
+        int size = 3;
 
-        int size = 2;
-        Coordinates cor;
-        double[][] target = new double[myList.size()][size];
+        double[] distancesPrimitive = new double[numberOfValidAccessPoint];
+        List<AccessPoint> accessPoints = information.getAccessPoints();
+        AccessPoint accessPoint;
+        double[][] target = new double[numberOfValidAccessPoint][size];
+
         for (int i = 0; i < target.length; ++i) {
-            cor = myList.get(i);
-            target[i][0] = cor.getX();
-            target[i][1] = cor.getY();
-            if (size == 3){
-                target[i][2] = cor.getZ();
-            }
-        }
+            accessPoint = accessPoints.get(i);
+            distancesPrimitive[i] = accessPoint.getDistance();
 
-        double[] distancesPrimitive = new double[distances.size()];
-        for (int i = 0; i < distancesPrimitive.length; ++i) {
-            distancesPrimitive[i] = distances.get(i);
+            coordinates = accessPoint.getCoordinates();
+            target[i][0] = coordinates.getX();
+            target[i][1] = coordinates.getY();
+            if (size == 3){
+                target[i][2] = coordinates.getZ();
+            }
         }
 
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(target, distancesPrimitive), new LevenbergMarquardtOptimizer());
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
-
 
         double[] centroid = optimum.getPoint().toArray();
 

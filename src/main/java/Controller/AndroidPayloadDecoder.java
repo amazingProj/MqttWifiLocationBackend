@@ -19,9 +19,11 @@ public class AndroidPayloadDecoder implements Decoder{
         JsonParser parser = new JsonParser();
         try {
             JsonObject obj = parser.parse(androidMessage).getAsJsonObject();
+            String keyOfAlarmed = "isAlarmed";
+            JsonElement val = obj.get(keyOfAlarmed);
             String keyOf = "NumberOfAccessPoints";
             JsonElement i = obj.get(keyOf);
-            if (i.getAsInt() > 2) {
+            if (i.getAsInt() > 1) {
                 result = indoorUserLocation.FindAndroidUserLocation(obj);
             }
 

@@ -1,7 +1,5 @@
 import Controller.EventsHandler;
-import Controller.Observer;
 import Controller.Sender;
-import com.google.gson.JsonObject;
 import com.hivemq.client.mqtt.MqttClient;
 import com.hivemq.client.mqtt.datatypes.MqttQos;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
@@ -14,10 +12,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class Main {
     private static final EventsHandler eventsHandler = new EventsHandler();
-
-    public Main(){
-
-    }
 
     public static void main(String[] args) {
         final String androidTopic = "mqtt/android/wifi/messages";

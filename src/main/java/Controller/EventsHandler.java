@@ -1,6 +1,5 @@
 package Controller;
 
-
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
