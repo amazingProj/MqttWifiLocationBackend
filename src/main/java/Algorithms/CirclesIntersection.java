@@ -1,7 +1,7 @@
 package Algorithms;
 
 import Geometries.Circle;
-import Primitives.Coordinates;
+import Primitives.AccessPointLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +24,9 @@ public class CirclesIntersection {
         return false;
     }
 
-    public List<Coordinates> FindTwoCirclesIntersections2D(Circle c1, Circle c2) {
+    public List<AccessPointLocation> FindTwoCirclesIntersections2D(Circle c1, Circle c2) {
         if (c1 == null || c2 == null) return null;
-        List<Coordinates> result = null;
+        List<AccessPointLocation> result = null;
         double x1 = c1.getMiddlePoint().getX(), x2 = c2.getMiddlePoint().getX();
         double y1 = c1.getMiddlePoint().getY(), y2 = c2.getMiddlePoint().getY();
         double r1 = c1.getRadius() + 3, r2 = c2.getRadius();
@@ -44,9 +44,9 @@ public class CirclesIntersection {
             double p1Y = y1 + x * ey + y * ex;
             double p2X = x1 + x * ex + y * ey;
             double p2Y = y1 + x * ey - y * ex;
-            result = new ArrayList<Coordinates>();
-            result.add(new Coordinates(p1X, p1Y));
-            result.add(new Coordinates(p2X, p2Y));
+            result = new ArrayList<AccessPointLocation>();
+            result.add(new AccessPointLocation(p1X, p1Y));
+            result.add(new AccessPointLocation(p2X, p2Y));
         }
         return result;
     }

@@ -1,12 +1,12 @@
 package Geometries;
 
-import Primitives.Coordinates;
+import Primitives.AccessPointLocation;
 
 public class Circle {
     private double radius;
-    private Coordinates middlePoint;
+    private AccessPointLocation middlePoint;
 
-    public Circle(Coordinates middlePoint, double radius) {
+    public Circle(AccessPointLocation middlePoint, double radius) {
         this.radius = radius;
         this.middlePoint = middlePoint;
     }
@@ -19,11 +19,11 @@ public class Circle {
         this.radius = radius;
     }
 
-    public Coordinates getMiddlePoint() {
+    public AccessPointLocation getMiddlePoint() {
         return middlePoint;
     }
 
-    public void setMiddlePoint(Coordinates middlePoint) {
+    public void setMiddlePoint(AccessPointLocation middlePoint) {
         this.middlePoint = middlePoint;
     }
 }

@@ -1,11 +1,11 @@
-package Model.AndroidDataHandler;
+package AndroidDataHandler;
 
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
 import WifiScanClasses.AccessPoint;
 import WifiScanClasses.PayloadInformation;
-import Primitives.Coordinates;
+import Primitives.AccessPointLocation;
 import Model.ValidAccessPoint;
 import com.google.gson.*;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
@@ -30,12 +30,12 @@ public class FindUserLocation {
     class route{
         private String accessPoint;
         private Double distances;
-        private Coordinates coordinates;
+        private AccessPointLocation coordinates;
 
-        public route(String _accessPoint, Double _distances, Coordinates _coordinates){
+        public route(String _accessPoint, Double _distances, AccessPointLocation _accessPointLocation){
             accessPoint = _accessPoint;
             distances = _distances;
-            coordinates = _coordinates;
+            coordinates = _accessPointLocation;
         }
 
         public route(String _accessPoint, Double _distances){
@@ -57,7 +57,7 @@ public class FindUserLocation {
 
         Iterator<String> keys = obj.keySet().iterator();
 
-        Coordinates coordinates;
+        AccessPointLocation coordinates;
 
         double distance;
 
@@ -66,9 +66,9 @@ public class FindUserLocation {
 
             if (key.startsWith("AccessPoint")){
                 AccessPoint accessPoint = gson.fromJson(obj.get(key).getAsString(), AccessPoint.class);
-                coordinates = (Coordinates) valid.obj.get(accessPoint.getBssid());
+                coordinates = (AccessPointLocation) valid.obj.get(accessPoint.getBssid());
                 if (coordinates != null){
-                   accessPoint.setCoordinates(new Coordinates(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
+                   accessPoint.setCoordinates(new AccessPointLocation(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
                    distance = calc.CalculateDistanceByRssi(accessPoint.getRssi());
                    System.out.printf("%s  %.4f   rssi is %distance \n",accessPoint.getBssid(), distance, accessPoint.getRssi());
                    accessPoint.setDistance(distance);

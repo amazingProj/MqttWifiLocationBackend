@@ -1,6 +1,6 @@
 package WifiScanClasses;
 
-import Primitives.Coordinates;
+import Primitives.AccessPointLocation;
 
 public class AccessPointSentByEsp32 {
     //{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"34:49:5B:16:9D:E4","Rssi":-52,"Ssid":"benny"}
@@ -8,14 +8,14 @@ public class AccessPointSentByEsp32 {
     private String Bssid;
     private int Rssi;
     private String Ssid;
-    private Coordinates coordinates;
+    private AccessPointLocation coordinates;
     private double distance;
 
-    public Coordinates getCoordinates() {
+    public AccessPointLocation getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(Coordinates coordinates) {
+    public void setAccessPointLocation(AccessPointLocation coordinates) {
         this.coordinates = coordinates;
     }
 

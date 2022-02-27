@@ -2,12 +2,17 @@ package Controller;
 
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class EventsHandler {
     private List<Observer> observerListPublishLocationEvent = new ArrayList<>();
     String message = "";
-    //private
+
+    /**
+     *
+     * @param observer -
+     */
     public void addObserverPublishLocationEvent(Observer observer){
         if (observer == null) return;
         observerListPublishLocationEvent.add(observer);

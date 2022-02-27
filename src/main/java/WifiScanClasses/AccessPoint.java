@@ -1,6 +1,6 @@
 package WifiScanClasses;
 
-import Primitives.Coordinates;
+import Primitives.AccessPointLocation;
 
 public class AccessPoint {
 
@@ -10,7 +10,7 @@ public class AccessPoint {
     String Ssid;
     String Bssid;
     int frequency;
-    private Coordinates coordinates;
+    private AccessPointLocation coordinates;
     private double distance;
 
     /********************************* Getter and Setters **********************************/
@@ -23,11 +23,11 @@ public class AccessPoint {
         this.distance = distance;
     }
 
-    public Coordinates getCoordinates() {
+    public AccessPointLocation getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(Coordinates coordinates) {
+    public void setCoordinates(AccessPointLocation coordinates) {
         this.coordinates = coordinates;
     }
 

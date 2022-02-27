@@ -1,8 +1,6 @@
 package Controller;
 
-import Algorithms.CirclesIntersection;
-import Controller.Decoder;
-import Model.ESP32WiFiScanHandler.FindUserLocation;
+import ESP32WiFiScanHandler.FindUserLocation;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -22,7 +20,8 @@ public class Esp32PayloadDecoder implements Decoder {
             JsonObject obj = parser.parse(esp32Message).getAsJsonObject();
             String keyOf = "NumberOfAccessPoints";
             JsonElement i = obj.get(keyOf);
-            if (i.getAsInt() > 2) {
+            if (i.getAsInt() >= 2) {
+                System.out.printf("%s \t\t\t   %s  %s\n", "Bssid", "Distance", "Rssi");
                 result = indoorUserLocation.FindEsp32UserLocation(obj);
             }
 
