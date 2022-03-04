@@ -51,11 +51,13 @@ public class FindUserLocation {
             if (key.matches("^[0-9]+")){
                 AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
                 double distance = calc.CalculateDistanceByRssi(accessPoint.getRssi());
-                System.out.printf("%s \t %.3f \t %d\n", accessPoint.getBssid(), distance, accessPoint.getRssi());
+                //System.out.printf("%s \t %.3f \t %d\n", accessPoint.getBssid(), distance, accessPoint.getRssi());
                 //System.out.println(accessPoint.getBssid().toLowerCase());
                 coordinates = (AccessPointLocation) valid.obj.get(accessPoint.getBssid().toLowerCase());
                 if (coordinates != null) {
                     accessPoint.setAccessPointLocation(new AccessPointLocation(coordinates));
+                    accessPoint.setFloor(coordinates.getFloorLevel());
+                    accessPoint.setRoom(coordinates.getRoom());
                     if (firstTime){
                         result.addProperty("FloorLevel", coordinates.getFloorLevel());
                         firstTime = false;
@@ -88,6 +90,8 @@ public class FindUserLocation {
 
         for (int i = 0; i < target.length; ++i) {
             accessPoint = accessPoints.get(i);
+            System.out.printf("%s \t %.3f   %d     %d  \t %d\n", accessPoint.getBssid(), accessPoint.getDistance(), accessPoint.getRssi(),
+                    accessPoint.getFloor(), accessPoint.getRoom());
             distancesPrimitive[i] = accessPoint.getDistance();
 
             coordinates = accessPoint.getCoordinates();

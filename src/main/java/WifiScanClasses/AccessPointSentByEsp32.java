@@ -10,6 +10,24 @@ public class AccessPointSentByEsp32 {
     private String Ssid;
     private AccessPointLocation coordinates;
     private double distance;
+    private int floor;
+    private int room;
+
+    public int getRoom() {
+        return room;
+    }
+
+    public void setRoom(int room) {
+        this.room = room;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
 
     public AccessPointLocation getCoordinates() {
         return coordinates;
