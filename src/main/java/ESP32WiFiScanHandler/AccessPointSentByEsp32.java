@@ -1,6 +1,6 @@
-package WifiScanClasses;
+package ESP32WiFiScanHandler;
 
-import Primitives.AccessPointLocation;
+import Utils.Primitives.AccessPointLocation;
 
 public class AccessPointSentByEsp32 {
     //{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"34:49:5B:16:9D:E4","Rssi":-52,"Ssid":"benny"}

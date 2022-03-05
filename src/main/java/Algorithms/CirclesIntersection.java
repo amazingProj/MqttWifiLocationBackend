@@ -1,7 +1,7 @@
 package Algorithms;
 
-import Geometries.Circle;
-import Primitives.AccessPointLocation;
+import Utils.Geometries.Circle;
+import Utils.Primitives.AccessPointLocation;
 
 import java.util.ArrayList;
 import java.util.List;

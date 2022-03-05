@@ -1,6 +1,6 @@
-package Geometries;
+package Utils.Geometries;
 
-import Primitives.AccessPointLocation;
+import Utils.Primitives.AccessPointLocation;
 
 public class Circle {
     private double radius;

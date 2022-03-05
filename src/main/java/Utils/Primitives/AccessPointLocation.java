@@ -1,4 +1,4 @@
-package Primitives;
+package Utils.Primitives;
 
 public class AccessPointLocation {
     double x;
@@ -6,23 +6,6 @@ public class AccessPointLocation {
     double z;
     int floorLevel = 0;
     int room = 0;
-    // lobi = 300
-
-    public int getFloorLevel() {
-        return floorLevel;
-    }
-
-    public void setFloorLevel(int floorLevel) {
-        this.floorLevel = floorLevel;
-    }
-
-    public int getRoom() {
-        return room;
-    }
-
-    public void setRoom(int room) {
-        this.room = room;
-    }
 
     public AccessPointLocation(AccessPointLocation coordinates){
         x = coordinates.getX();
@@ -54,16 +37,46 @@ public class AccessPointLocation {
         room = _room;
     }
 
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, String _noteComment) {
+        x = _x;
+        y = _y;
+        z = _z;
+        floorLevel = _floorLevel;
+        noteComment = _noteComment;
+    }
+
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _room, String _noteComment) {
+        x = _x;
+        y = _y;
+        z = _z;
+        floorLevel = _floorLevel;
+        room = _room;
+        noteComment = _noteComment;
+    }
+
     public AccessPointLocation(double _x, double _y){
         x = _x;
         y = _y;
         z = 0;
     }
 
-    public AccessPointLocation() {
-        x = 0;
-        y = 0;
-        z = 0;
+    public String getNoteComment() {
+        return noteComment;
+    }
+
+    public void setNoteComment(String noteComment) {
+        this.noteComment = noteComment;
+    }
+
+    String noteComment;
+    // lobi = 300
+
+    public int getFloorLevel() {
+        return floorLevel;
+    }
+
+    public int getRoom() {
+        return room;
     }
 
     public double getZ() {

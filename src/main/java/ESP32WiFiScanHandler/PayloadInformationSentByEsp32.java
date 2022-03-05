@@ -1,6 +1,6 @@
-package WifiScanClasses;
+package ESP32WiFiScanHandler;
 
-import WifiScanClasses.AccessPointSentByEsp32;
+import ESP32WiFiScanHandler.AccessPointSentByEsp32;
 
 import java.util.ArrayList;
 import java.util.List;

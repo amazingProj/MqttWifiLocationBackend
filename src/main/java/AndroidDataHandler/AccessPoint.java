@@ -1,6 +1,6 @@
-package WifiScanClasses;
+package AndroidDataHandler;
 
-import Primitives.AccessPointLocation;
+import Utils.Primitives.AccessPointLocation;
 
 public class AccessPoint {
 

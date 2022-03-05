@@ -1,6 +1,6 @@
-package WifiScanClasses;
+package AndroidDataHandler;
 
-import WifiScanClasses.AccessPoint;
+import AndroidDataHandler.AccessPoint;
 
 import java.util.ArrayList;
 import java.util.List;
