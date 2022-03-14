@@ -101,7 +101,7 @@ public class NonLinearLeastSquaresSolver {
             for (int i = 0; i < initialPoint.length; i++) {
                 output.append(initialPoint[i]).append(" ");
             }
-            System.out.println(output.toString());
+            System.out.println(output);
         }
 
         double[] target = new double[numberOfPositions];

@@ -30,12 +30,20 @@ public class Main {
                 .applyWebSocketConfig()
                 .buildBlocking();
 
-        client.connectWith()
-                .simpleAuth()
-                .username(username)
-                .password(UTF_8.encode(password))
-                .applySimpleAuth()
-                .send();
+        while (!client.getState().isConnected()){
+            try {
+                client.connectWith()
+                        .simpleAuth()
+                        .username(username)
+                        .password(UTF_8.encode(password))
+                        .applySimpleAuth()
+                        .send();
+            }
+            catch (Exception e){
+
+            }
+        }
+
 
         System.out.println("Connected successfully");
         // init a global client
@@ -54,12 +62,10 @@ public class Main {
          // Set a callback that is called when a message is received (using the async API style).
          // Then disconnect the client after a message was received.
         client.toAsync().publishes(ALL, publish -> {
-            System.out.println("Received message: " + publish.getTopic() + " -> " + UTF_8.decode(publish.getPayload().get()));
             String messageReceived = UTF_8.decode(publish.getPayload().get()).toString();
             String topic = publish.getTopic().toString();
-
+            //System.out.println("Received message: " + topic + " -> " + messageReceived);
             eventsHandler.messageArriveEvent(messageReceived, topic);
-            
             //client.disconnect();
         });
     }

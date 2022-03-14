@@ -1,8 +1,10 @@
 package Controller;
 
+import Model.AndroidPayloadDecoder;
+import Model.Decoder;
+import Model.Esp32PayloadDecoder;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class EventsHandler {
@@ -56,6 +58,7 @@ public class EventsHandler {
 
         if (result != null){
             notifyAllUserLocationObservers(result, "users/devices/location");
+
         }
     }
 

@@ -1,4 +1,4 @@
-package ESP32WiFiScanHandler;
+package Utils.Primitives;
 
 import Utils.Primitives.AccessPointLocation;
 

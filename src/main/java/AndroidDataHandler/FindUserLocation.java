@@ -116,11 +116,6 @@ public class FindUserLocation {
 
         double[] centroid = optimum.getPoint().toArray();
 
-
-        for (int i = 0; i < centroid.length; ++i){
-            System.out.printf("%.1f\n", centroid[i]);
-        }
-
         result.addProperty("x", nf.format(centroid[0]));
         result.addProperty("y", nf.format(centroid[1]));
 

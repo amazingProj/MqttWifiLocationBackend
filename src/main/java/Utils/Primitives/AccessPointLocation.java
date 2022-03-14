@@ -6,6 +6,7 @@ public class AccessPointLocation {
     double z;
     int floorLevel = 0;
     int room = 0;
+    int measuredPower;
 
     public AccessPointLocation(AccessPointLocation coordinates){
         x = coordinates.getX();
@@ -22,36 +23,44 @@ public class AccessPointLocation {
         z = _z;
     }
 
-    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel) {
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _mesuredPower) {
         x = _x;
         y = _y;
         z = _z;
         floorLevel = _floorLevel;
+        measuredPower = _mesuredPower;
     }
 
-    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _room) {
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _room, int _mesuredPower) {
         x = _x;
         y = _y;
         z = _z;
         floorLevel = _floorLevel;
         room = _room;
+        measuredPower = _mesuredPower;
     }
 
-    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, String _noteComment) {
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, String _noteComment, int _mesuredPower) {
         x = _x;
         y = _y;
         z = _z;
         floorLevel = _floorLevel;
         noteComment = _noteComment;
+        measuredPower = _mesuredPower;
     }
 
-    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _room, String _noteComment) {
+    public int getMeasuredPower() {
+        return measuredPower;
+    }
+
+    public AccessPointLocation(double _x, double _y, double _z, int _floorLevel, int _room, String _noteComment, int _mesuredPower) {
         x = _x;
         y = _y;
         z = _z;
         floorLevel = _floorLevel;
         room = _room;
         noteComment = _noteComment;
+        measuredPower = _mesuredPower;
     }
 
     public AccessPointLocation(double _x, double _y){

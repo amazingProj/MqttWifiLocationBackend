@@ -1,6 +1,6 @@
-package ESP32WiFiScanHandler;
+package Utils.Primitives;
 
-import ESP32WiFiScanHandler.AccessPointSentByEsp32;
+import Utils.Primitives.AccessPointSentByEsp32;
 
 import java.util.ArrayList;
 import java.util.List;

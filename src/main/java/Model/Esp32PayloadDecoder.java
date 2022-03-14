@@ -1,6 +1,7 @@
-package Controller;
+package Model;
 
-import ESP32WiFiScanHandler.FindUserLocation;
+import Algorithms.FindUserLocation;
+import Model.Decoder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

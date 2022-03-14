@@ -1,9 +1,10 @@
-package Controller;
+package Model;
 
 import AndroidDataHandler.FindUserLocation;
+import Model.Decoder;
 import com.google.gson.*;
 
-public class AndroidPayloadDecoder implements Decoder{
+public class AndroidPayloadDecoder implements Decoder {
     FindUserLocation indoorUserLocation = new FindUserLocation();
 
     public AndroidPayloadDecoder() {
