@@ -1,36 +1,46 @@
 package Algorithms;
 
-import Utils.Primitives.*;
+import Model.RssiError;
+import Utils.AccessPointLocation;
+import Utils.AccessPointSentByEsp32;
+import Utils.PayloadInformationSentByEsp32;
 import Model.ValidAccessPoint;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
-
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 
+/**
+ * class represents find user location class
+ */
 public class FindUserLocation {
     GsonBuilder builder;
     Gson gson;
     NumberFormat nf;
     int dimension = 3;
+    RssiError rssiError;
 
+    /**
+     * construct a find user location class
+     */
     public FindUserLocation() {
         builder = new GsonBuilder();
         builder.setPrettyPrinting();
         gson = builder.create();
         nf = NumberFormat.getInstance();
-        nf.setMaximumFractionDigits(1);
+        nf.setMaximumFractionDigits(0);
+        rssiError = new RssiError();
     }
 
-    public void setDimension(int dimension) {
-        this.dimension = dimension;
-    }
-
+    /**
+     * finds the location of a user in the building
+     * @param obj - a json format message contains list of rssi
+     * @return user location in x,y,z
+     */
     public JsonObject FindEsp32UserLocation(JsonObject obj) {
         if (obj == null) return null;
 
@@ -42,7 +52,6 @@ public class FindUserLocation {
         ValidAccessPoint valid = new ValidAccessPoint();
         Iterator<String> keys = obj.keySet().iterator();
         AccessPointLocation coordinates;
-        MiddleRooms middleRooms = new MiddleRooms();
 
         boolean firstTime = true;
         int tempFloorLevel;
@@ -76,26 +85,11 @@ public class FindUserLocation {
                         firstTime = false;
                     }
                     int actualRssi = accessPoint.getRssi();
-                    /*if (floorLevel != tempFloorLevel){
-                        actualRssi += 9;
+                    int error = rssiError.getError(closestRoom, temp.toLowerCase());
+                    if (error != -1)
+                    {
+                        actualRssi += error;
                     }
-                    else if (room != closestRoom){
-                        int wall = middleRooms.neighborhoodsLevel(closestRoom, room);
-                        if (wall == 1){
-                            actualRssi += 3;
-                        }
-                        else if (wall == 2){
-                            actualRssi += 7;
-                        }
-                        else if (wall == 3){
-                            actualRssi += 9;
-                        }
-                    }
-                    calc.setMeasuredPower(mesuredPower);
-                    double distance = calc.CalculateDistanceByRssi(actualRssi);
-                    accessPoint.setDistance(distance);
-                    information.addAccessPoint(accessPoint);*/
-                    //calc.setMeasuredPower(mesuredPower);
                     double distance = calc.CalculateDistanceByRssi(actualRssi);
                     accessPoint.setDistance(distance);
                     information.addAccessPoint(accessPoint);
@@ -123,6 +117,8 @@ public class FindUserLocation {
 
         double[] distancesPrimitive = new double[numberOfValidAccessPoint];
         List<AccessPointSentByEsp32> accessPoints = information.getAccessPoints();
+        ErrorAverage errorAverage = new ErrorAverage(4.5, 3, 4);
+        errorAverage.update(accessPoints);
 
         double[][] target = new double[numberOfValidAccessPoint][dimension];
         double distanceTemp;
@@ -149,8 +145,6 @@ public class FindUserLocation {
         solver.setThreads(1);
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
         double[] centroid = optimum.getPoint().toArray();
-        //double x = (centroid[0] + vec.getX()) / 2;
-        //double y = (centroid[1] + vec.getY()) / 2;
         double z = centroid[2];
         result.addProperty("x", nf.format(centroid[0]));
         result.addProperty("y", nf.format(centroid[1]));

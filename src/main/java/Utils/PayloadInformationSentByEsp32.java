@@ -1,6 +1,6 @@
-package Utils.Primitives;
+package Utils;
 
-import Utils.Primitives.AccessPointSentByEsp32;
+import Utils.AccessPointSentByEsp32;
 
 import java.util.ArrayList;
 import java.util.List;

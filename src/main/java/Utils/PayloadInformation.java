@@ -1,6 +1,6 @@
-package AndroidDataHandler;
+package Utils;
 
-import AndroidDataHandler.AccessPoint;
+import Utils.AccessPoint;
 
 import java.util.ArrayList;
 import java.util.List;

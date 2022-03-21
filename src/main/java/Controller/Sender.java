@@ -6,6 +6,9 @@ import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+/**
+ * class represents sender to broker
+ */
 public class Sender implements Observer{
     private static Mqtt5BlockingClient clientSender;
     public Sender(Mqtt5BlockingClient _clientSender){

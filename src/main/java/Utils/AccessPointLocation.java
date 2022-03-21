@@ -1,4 +1,4 @@
-package Utils.Primitives;
+package Utils;
 
 public class AccessPointLocation {
     double x;

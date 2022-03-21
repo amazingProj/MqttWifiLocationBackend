@@ -7,8 +7,8 @@ import org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
 import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.DiagonalMatrix;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+//import java.util.concurrent.ExecutorService;
+//import java.util.concurrent.Executors;
 
 /**
  * Solves a Trilateration problem with an instance of a
@@ -62,9 +62,9 @@ public class NonLinearLeastSquaresSolver {
         if (debugInfo) {
             System.out.println("Max Number of Iterations : " + MAX_NUMBER_OF_ITERATIONS);
         }
-        int cores = Runtime.getRuntime().availableProcessors();
-        ExecutorService exec = threads == 1 ? null : Executors.newFixedThreadPool(threads);
-        System.out.println("Cores: " + cores + ", threads: " + threads);
+        //int cores = Runtime.getRuntime().availableProcessors();
+        //ExecutorService exec = threads == 1 ? null : Executors.newFixedThreadPool(threads);
+        //System.out.println("Cores: " + cores + ", threads: " + threads);
 
         LeastSquaresProblem leastSquaresProblem = LeastSquaresFactory.create(
                 // function to be optimized

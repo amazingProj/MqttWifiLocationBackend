@@ -1,10 +1,12 @@
-package AndroidDataHandler;
+package Algorithms;
 
 import Algorithms.DistanceCalculator;
 import Algorithms.NonLinearLeastSquaresSolver;
 import Algorithms.TrilaterationFunction;
-import Utils.Primitives.AccessPointLocation;
+import Utils.AccessPoint;
+import Utils.AccessPointLocation;
 import Model.ValidAccessPoint;
+import Utils.PayloadInformation;
 import com.google.gson.*;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
@@ -13,12 +15,12 @@ import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 
-public class FindUserLocation {
+public class FindUserLocationAndroid {
     GsonBuilder builder;
     Gson gson;
     NumberFormat nf;
 
-    public FindUserLocation(){
+    public FindUserLocationAndroid(){
         builder = new GsonBuilder();
         builder.setPrettyPrinting();
         gson = builder.create();

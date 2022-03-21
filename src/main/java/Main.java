@@ -13,9 +13,14 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class Main {
     private static final EventsHandler eventsHandler = new EventsHandler();
 
+    /**
+     * main program
+     * @param args - arguments no use in our program
+     */
     public static void main(String[] args) {
-        final String androidTopic = "mqtt/android/wifi/messages";
-        final String espTopic = "users/wifi/scan";
+        /**
+         *  path, username and password to the cloud
+         */
         final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
         final String username = "Esp32";
         final String password = "Esp32Asaf";
@@ -43,12 +48,16 @@ public class Main {
 
             }
         }
-
-
         System.out.println("Connected successfully");
-        // init a global client
+
+        // init a global client subscribe to event handler which send a message to client's broker
         eventsHandler.addObserverPublishLocationEvent(new Sender(client));
 
+
+        // subscribe client to topic from the cloud
+
+        final String androidTopic = "mqtt/android/wifi/messages";
+        final String espTopic = "users/wifi/scan";
         client.subscribeWith()
                 .topicFilter(espTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
@@ -59,8 +68,7 @@ public class Main {
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
 
-         // Set a callback that is called when a message is received (using the async API style).
-         // Then disconnect the client after a message was received.
+
         client.toAsync().publishes(ALL, publish -> {
             String messageReceived = UTF_8.decode(publish.getPayload().get()).toString();
             String topic = publish.getTopic().toString();

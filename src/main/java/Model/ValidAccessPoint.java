@@ -1,6 +1,6 @@
 package Model;
 
-import Utils.Primitives.AccessPointLocation;
+import Utils.AccessPointLocation;
 
 import java.util.HashMap;
 

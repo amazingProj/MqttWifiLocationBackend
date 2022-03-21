@@ -1,6 +1,6 @@
-package AndroidDataHandler;
+package Utils;
 
-import Utils.Primitives.AccessPointLocation;
+import Utils.AccessPointLocation;
 
 public class AccessPoint {
 

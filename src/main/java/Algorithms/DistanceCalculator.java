@@ -6,6 +6,14 @@ public class DistanceCalculator {
     // low strength is 2 and high is 4, medium is 3
     private final int environmentalFactor = 4;
 
+    public int getEnvironmentalFactor() {
+        return environmentalFactor;
+    }
+
+    public int getMeasuredPower() {
+        return measuredPower;
+    }
+
     public double CalculateDistanceByRssi(int rssi){
         if (rssi == -127){
             return Double.MAX_VALUE;

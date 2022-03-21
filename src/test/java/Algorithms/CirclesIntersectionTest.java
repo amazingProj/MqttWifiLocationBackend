@@ -1,7 +1,7 @@
 package Algorithms;
 
-import Utils.Geometries.Circle;
-import Utils.Primitives.AccessPointLocation;
+import Utils.Circle;
+import Utils.AccessPointLocation;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

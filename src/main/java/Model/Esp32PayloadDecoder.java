@@ -22,7 +22,7 @@ public class Esp32PayloadDecoder implements Decoder {
             String keyOf = "NumberOfAccessPoints";
             JsonElement i = obj.get(keyOf);
             if (i.getAsInt() >= 2) {
-                System.out.printf("%s \t\t\t   %s  %s   %s   %s\n", "Bssid", "Distance", "Rssi", "Floor", "Room");
+                System.out.printf("\n%s \t\t\t   %s  %s   %s   %s\n", "Bssid", "Distance", "Rssi", "Floor", "Room");
                 result = indoorUserLocation.FindEsp32UserLocation(obj);
             }
 
