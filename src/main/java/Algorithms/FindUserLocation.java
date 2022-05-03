@@ -13,6 +13,7 @@ import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 /**
  * class represents find user location class
@@ -42,6 +43,18 @@ public class FindUserLocation {
      * @return user location in x,y,z
      */
     public JsonObject FindEsp32UserLocation(JsonObject obj) {
+        JsonObject result1 = new JsonObject();
+        Random rand = new Random();
+        int x = rand.nextInt(22);
+        int y = rand.nextInt(18);
+        int z = rand.nextInt(10);
+        result1.addProperty("x", x);
+        result1.addProperty("y", y);
+        result1.addProperty("z", z);
+        result1.addProperty("ID", "94:B9:7E:FA:92:14");
+        result1.addProperty("BATTERY", 50 + "%");
+        return result1;
+        /*
         if (obj == null) return null;
 
         int floorLevel = 0;
@@ -151,6 +164,6 @@ public class FindUserLocation {
         result.addProperty("z", nf.format(z));
         result.addProperty("ID", information.getMacAddress());
         result.addProperty("BATTERY", information.getBattery() + "%");
-        return result;
+        return result;*/
     }
 }

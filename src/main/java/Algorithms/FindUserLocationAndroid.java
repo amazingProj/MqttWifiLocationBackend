@@ -14,6 +14,7 @@ import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer
 import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class FindUserLocationAndroid {
     GsonBuilder builder;
@@ -45,6 +46,18 @@ public class FindUserLocationAndroid {
     }
 
     public JsonObject FindAndroidUserLocation(JsonObject obj){
+        JsonObject result1 = new JsonObject();
+        Random rand = new Random();
+        int x = rand.nextInt(22);
+        int y = rand.nextInt(18);
+        int z = rand.nextInt(10);
+        result1.addProperty("x", x);
+        result1.addProperty("y", y);
+        result1.addProperty("z", z);
+        result1.addProperty("ID", "94:B9:7E:FA:92:14");
+        result1.addProperty("BATTERY", 50 + "%");
+        return result1;
+        /*
         if (obj == null) return null;
 
         DistanceCalculator calc = new DistanceCalculator();
@@ -125,5 +138,7 @@ public class FindUserLocationAndroid {
         result.addProperty("FloorLevel", "4");
         result.addProperty("BATTERY", "100%");
         return result;
+
+         */
     }
 }
