@@ -86,6 +86,7 @@ public class Main {
             //client.disconnect();
         });
 
+        /*
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -111,6 +112,6 @@ public class Main {
 
             }
         }, 0, 10000);//wait 0 ms before doing the action and do it evry 1000ms (1second)
-
+*/
     }
 }

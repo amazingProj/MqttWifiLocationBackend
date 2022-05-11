@@ -43,18 +43,7 @@ public class FindUserLocation {
      * @return user location in x,y,z
      */
     public JsonObject FindEsp32UserLocation(JsonObject obj) {
-        JsonObject result1 = new JsonObject();
-        Random rand = new Random();
-        int x = rand.nextInt(22);
-        int y = rand.nextInt(18);
-        int z = rand.nextInt(10);
-        result1.addProperty("x", x);
-        result1.addProperty("y", y);
-        result1.addProperty("z", z);
-        result1.addProperty("ID", "94:B9:7E:FA:92:14");
-        result1.addProperty("BATTERY", 50 + "%");
-        return result1;
-        /*
+
         if (obj == null) return null;
 
         int floorLevel = 0;
@@ -106,6 +95,7 @@ public class FindUserLocation {
                     double distance = calc.CalculateDistanceByRssi(actualRssi);
                     accessPoint.setDistance(distance);
                     information.addAccessPoint(accessPoint);
+
                 }
             }
            else if (key.equals("MacAddress")) {
@@ -128,10 +118,24 @@ public class FindUserLocation {
 
         AccessPointSentByEsp32 accessPoint;
 
+        if (numberOfValidAccessPoint == 1)
+        {
+            accessPoint = information.getAccessPoints().get(0);
+            result.addProperty("x", accessPoint.getCoordinates().getX() - accessPoint.getDistance());
+            result.addProperty("y", accessPoint.getCoordinates().getY());
+
+            result.addProperty("z", accessPoint.getCoordinates().getZ() - 0.5);
+
+
+            result.addProperty("ID", information.getMacAddress());
+            //result.addProperty("BATTERY", information.getBattery() + "%");
+            return result;
+        }
+
+
+
         double[] distancesPrimitive = new double[numberOfValidAccessPoint];
         List<AccessPointSentByEsp32> accessPoints = information.getAccessPoints();
-        ErrorAverage errorAverage = new ErrorAverage(4.5, 3, 4);
-        errorAverage.update(accessPoints);
 
         double[][] target = new double[numberOfValidAccessPoint][dimension];
         double distanceTemp;
@@ -141,12 +145,13 @@ public class FindUserLocation {
             System.out.printf("%s \t %.3f   %d     %d  \t %d\n", accessPoint.getBssid(), distanceTemp, accessPoint.getRssi(),
                     accessPoint.getFloor(), accessPoint.getRoom());
 
-
-
             coordinates = accessPoint.getCoordinates();
             target[i][0] = coordinates.getX();
             target[i][1] = coordinates.getY();
+
             target[i][2] = coordinates.getZ();
+
+
 
             distancesPrimitive[i] = distanceTemp;
         }
@@ -161,9 +166,12 @@ public class FindUserLocation {
         double z = centroid[2];
         result.addProperty("x", nf.format(centroid[0]));
         result.addProperty("y", nf.format(centroid[1]));
+
         result.addProperty("z", nf.format(z));
+
+
         result.addProperty("ID", information.getMacAddress());
-        result.addProperty("BATTERY", information.getBattery() + "%");
-        return result;*/
+        //result.addProperty("BATTERY", information.getBattery() + "%");
+        return result;
     }
 }

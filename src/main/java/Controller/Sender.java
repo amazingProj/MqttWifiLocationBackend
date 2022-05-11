@@ -21,6 +21,6 @@ public class Sender implements Observer{
                 .payload(UTF_8.encode(payload.toString()))
                 .qos(MqttQos.EXACTLY_ONCE)
                 .send();
-        System.out.printf("%s  %s", topic, payload);
+        System.out.printf("%s  %s\n\n", topic, payload);
     }
 }

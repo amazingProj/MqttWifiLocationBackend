@@ -22,7 +22,7 @@ public class ErrorAverage {
         DistanceCalculator distanceCalculator = new DistanceCalculator();
         int rssiSignal = 0;
         double distance;
-        int envFactor;
+        double envFactor;
         int a;
         double xi, yi, zi;
         realRssi = new HashMap<>();

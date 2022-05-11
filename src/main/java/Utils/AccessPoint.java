@@ -4,16 +4,38 @@ import Utils.AccessPointLocation;
 
 public class AccessPoint {
 
-    /******************************** Properties *******************************************/
-
-    int Rssi;
-    String Ssid;
-    String Bssid;
-    int frequency;
+    private String EspMacAddress;
+    private String Bssid;
+    private int Rssi;
+    private String Ssid;
     private AccessPointLocation coordinates;
     private double distance;
+    private int floor;
+    private int room;
 
-    /********************************* Getter and Setters **********************************/
+    public int getRoom() {
+        return room;
+    }
+
+    public void setRoom(int room) {
+        this.room = room;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public AccessPointLocation getCoordinates() {
+        return coordinates;
+    }
+
+    public void setAccessPointLocation(AccessPointLocation coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public double getDistance() {
         return distance;
@@ -21,30 +43,6 @@ public class AccessPoint {
 
     public void setDistance(double distance) {
         this.distance = distance;
-    }
-
-    public AccessPointLocation getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(AccessPointLocation coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    public int getFrequency() {
-        return frequency;
-    }
-
-    public void setFrequency(int frequency) {
-        this.frequency = frequency;
-    }
-
-    public String getBssid() {
-        return Bssid;
-    }
-
-    public void setBssid(String bssid) {
-        Bssid = bssid;
     }
 
     public String getSsid() {
@@ -60,18 +58,29 @@ public class AccessPoint {
     }
 
     public void setRssi(int rssi) {
-        this.Rssi = rssi;
+        Rssi = rssi;
+    }
+
+    public String getBssid() {
+        return Bssid;
+    }
+
+    public void setBssid(String bssid) {
+        Bssid = bssid;
+    }
+
+    public String getEspMacAddress() {
+        return EspMacAddress;
+    }
+
+    public void setEspMacAddress(String espMacAddress) {
+        EspMacAddress = espMacAddress;
     }
 
     @Override
     public String toString() {
         return "AccessPoint{" +
-                "Rssi=" + Rssi +
-                ", Ssid='" + Ssid + '\'' +
-                ", Bssid='" + Bssid + '\'' +
-                ", frequency=" + frequency +
-                ", coordinates=" + coordinates +
-                ", distance=" + distance +
+                ", coordinates=" + coordinates.getX() + ", " + coordinates.getY() + ", " + coordinates.getZ() +
                 '}';
     }
 }

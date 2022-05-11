@@ -82,6 +82,20 @@ public class RssiError {
                 "b4:5d:50:bd:ac:a0", 16
         );
         errors.put(460, map);
+        map.clear();
+        map.put(
+                "b4:5d:50:bd:9e:00", 4
+        );
+        map.put(
+                "b4:5d:50:bd:c8:e0", -3
+        );
+        map.put(
+                "b4:5d:50:bd:9e:60", 20
+        );
+        map.put(
+                "b4:5d:50:bd:a3:c0", 20
+        );
+        errors.put(560, map);
     }
 
     /**

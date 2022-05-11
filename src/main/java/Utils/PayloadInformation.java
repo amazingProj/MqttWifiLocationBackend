@@ -9,7 +9,7 @@ public class PayloadInformation {
 
     /******************************** Properties *******************************************/
 
-    int specialId;
+    String specialId;
     int numberOfAccessPoint;
     boolean isAlarmed;
     List<AccessPoint> accessPoints = new ArrayList<>();
@@ -52,11 +52,11 @@ public class PayloadInformation {
         this.numberOfAccessPoint = numberOfAccessPoint;
     }
 
-    public int getSpecialId() {
+    public String getSpecialId() {
         return specialId;
     }
 
-    public void setSpecialId(int specialId) {
+    public void setSpecialId(String specialId) {
         this.specialId = specialId;
     }
 
