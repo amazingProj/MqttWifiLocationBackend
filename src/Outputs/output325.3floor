@@ -1,0 +1,179 @@
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :Main.main()
+Connected successfully
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-40,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  5,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-92,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -69     3  	 302
+B4:5D:50:BD:A3:C0 	 14.000   -84     4  	 440
+B4:5D:50:BD:9E:60 	 14.000   -85     4  	 460
+B4:5D:50:BD:A4:60 	 11.000   -92     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-40,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-92,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":6,"MacAddress":"94:B9:7E:FA:92:14
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  ","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ssid":"AndroidAPFE24"},"2":{"Esp
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  MacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  "Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  :"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddr
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  ess":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-85,"Ssid":
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  "JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  :50:BD:A4:60","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"9
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  4:B9:7E:FA:92:14","Bssid":"3C:67:FB:51:6C:89","Rssi":-92,"Ssid":"4G UFI_C89"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -69     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -84     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -85     4  	 440
+B4:5D:50:BD:A4:60 	 11.000   -90     3  	 330
+{"Battery":100,"NumberOfAccessPoints":6,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3C:67:FB:51:6C:89","Rssi":-92,"Ssid":"4G UFI_C89"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-40,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  4,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-93,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -69     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -84     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -84     4  	 440
+B4:5D:50:BD:A4:60 	 11.000   -93     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-40,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-93,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":4,"MacAddress
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  ":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  ":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  FB:19:26:41:57","Rssi":-40,"Ssid":"AndroidAPFE24"},
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  "2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  4:5D:50:BD:AC:A0","Rssi":-71,"Ssid":"JCT-Lev-WiFi"}
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  ,"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  },"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  "B4:5D:50:BD:A3:C0","Rssi":-86,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -71     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -84     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -86     4  	 440
+{"Battery":100,"NumberOfAccessPoints":4,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-40,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-71,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-86,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"9","y":"5","z":"?-8","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-71,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:9E:60","Rssi":-82,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  4,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-93,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -71     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -82     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -84     4  	 440
+B4:5D:50:BD:A4:60 	 11.000   -93     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-71,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-82,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-93,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-72,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:9E:60","Rssi":-83,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  4,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-94,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -72     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -83     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -84     4  	 440
+B4:5D:50:BD:A4:60 	 11.000   -94     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-72,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-83,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-94,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:A3:C0","Rssi":-83,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  4,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-90,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -69     3  	 302
+B4:5D:50:BD:A3:C0 	 14.000   -83     4  	 440
+B4:5D:50:BD:9E:60 	 14.000   -84     4  	 460
+B4:5D:50:BD:A4:60 	 11.000   -90     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-41,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-83,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-90,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+Received message: users/wifi/scan -> 1,10,94:B9:7E:FA:92:14  {"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7
+Received message: users/wifi/scan -> 2,10,94:B9:7E:FA:92:14  E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"
+Received message: users/wifi/scan -> 3,10,94:B9:7E:FA:92:14  94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-42,"Ss
+Received message: users/wifi/scan -> 4,10,94:B9:7E:FA:92:14  id":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14"
+Received message: users/wifi/scan -> 5,10,94:B9:7E:FA:92:14  ,"Bssid":"B4:5D:50:BD:AC:A0","Rssi":-70,"Ssid":"JCT-Lev-WiFi"
+Received message: users/wifi/scan -> 6,10,94:B9:7E:FA:92:14  },"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:
+Received message: users/wifi/scan -> 7,10,94:B9:7E:FA:92:14  BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddre
+Received message: users/wifi/scan -> 8,10,94:B9:7E:FA:92:14  ss":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-8
+Received message: users/wifi/scan -> 9,10,94:B9:7E:FA:92:14  4,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92
+Received message: users/wifi/scan -> 10,10,94:B9:7E:FA:92:14  :14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:A0 	 11.000   -70     3  	 302
+B4:5D:50:BD:9E:60 	 14.000   -84     4  	 460
+B4:5D:50:BD:A3:C0 	 14.000   -84     4  	 440
+B4:5D:50:BD:A4:60 	 11.000   -91     3  	 330
+{"Battery":100,"NumberOfAccessPoints":5,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-42,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-70,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":3,"x":"23","y":"7","z":"4","ID":"94:B9:7E:FA:92:14"}
+
+
+> Task :Main.main() FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':Main.main()'.
+> Build cancelled while executing task ':Main.main()'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 1m 19s
+2 actionable tasks: 2 executed

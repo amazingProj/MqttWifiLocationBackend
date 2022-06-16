@@ -1,0 +1,157 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+
+> Task :Main.main()
+Connected successfully
+
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 5.957   -66     4  	 450
+B4:5D:50:BD:9E:60 	 13.335   -85     4  	 460
+B4:5D:50:BD:9E:00 	 16.788   -89     5  	 560
+B4:5D:50:BD:A3:C0 	 23.714   -90     4  	 440
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-24,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-66,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:00","Rssi":-92,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-94,"Ssid":"BeSpot776C_2.4"}}
+users/devices/location  {"FloorLevel":4,"x":"8","y":"21","z":"4","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 11.885   -83     4  	 460
+B4:5D:50:BD:A4:60 	 14.962   -87     3  	 330
+B4:5D:50:BD:A3:C0 	 16.788   -89     4  	 440
+B4:5D:50:BD:9E:00 	 23.714   -90     5  	 560
+B4:5D:50:BD:AC:40 	 13.335   -95     4  	 420
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-83,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-93,"Ssid":"BeSpot776C_2.4"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-95,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"15","y":"17","z":"9","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:A4:60 	 14.125   -86     3  	 330
+B4:5D:50:BD:A3:C0 	 14.962   -87     4  	 440
+B4:5D:50:BD:9E:00 	 16.788   -89     5  	 560
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-78,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-89,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"5","y":"19","z":"1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 7.079   -69     4  	 450
+B4:5D:50:BD:9E:60 	 12.589   -84     4  	 460
+B4:5D:50:BD:A4:60 	 14.962   -87     3  	 330
+B4:5D:50:BD:9E:00 	 15.849   -88     5  	 560
+B4:5D:50:BD:A3:C0 	 23.714   -90     4  	 440
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"4","y":"21","z":"4","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 7.079   -69     4  	 450
+B4:5D:50:BD:9E:60 	 12.589   -84     4  	 460
+B4:5D:50:BD:A3:C0 	 23.714   -90     4  	 440
+B4:5D:50:BD:9E:00 	 11.220   -92     5  	 560
+B4:5D:50:BD:AC:40 	 12.589   -94     4  	 420
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-92,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-92,"Ssid":"BeSpot776C_2.4"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-94,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"15","y":"17","z":"6","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 6.310   -67     4  	 450
+B4:5D:50:BD:9E:60 	 11.220   -82     4  	 460
+B4:5D:50:BD:A3:C0 	 16.788   -89     4  	 440
+B4:5D:50:BD:9E:00 	 23.714   -90     5  	 560
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-67,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-80,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-82,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-94,"Ssid":"BeSpot776C_2.4"}}
+users/devices/location  {"FloorLevel":4,"x":"10","y":"18","z":"1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 13.335   -85     4  	 460
+B4:5D:50:BD:9E:00 	 15.849   -88     5  	 560
+B4:5D:50:BD:A3:C0 	 16.788   -89     4  	 440
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-26,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-92,"Ssid":"BeSpot776C_2.4"}}
+users/devices/location  {"FloorLevel":4,"x":"9","y":"20","z":"2","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 7.079   -69     4  	 450
+B4:5D:50:BD:9E:60 	 13.335   -85     4  	 460
+B4:5D:50:BD:A4:60 	 14.962   -87     3  	 330
+B4:5D:50:BD:9E:00 	 16.788   -89     5  	 560
+B4:5D:50:BD:A3:C0 	 23.714   -90     4  	 440
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"5","y":"21","z":"4","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 11.220   -82     4  	 460
+B4:5D:50:BD:A4:60 	 14.962   -87     3  	 330
+B4:5D:50:BD:A3:C0 	 15.849   -88     4  	 440
+B4:5D:50:BD:9E:00 	 23.714   -90     5  	 560
+B4:5D:50:BD:AC:40 	 13.335   -95     4  	 420
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-26,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-78,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-82,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-93,"Ssid":"BeSpot776C_2.4"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-95,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"12","y":"15","z":"?-0","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.012   -63     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 12.589   -84     4  	 460
+B4:5D:50:BD:A4:60 	 15.849   -88     3  	 330
+B4:5D:50:BD:9E:00 	 15.849   -88     5  	 560
+B4:5D:50:BD:A3:C0 	 16.788   -89     4  	 440
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-24,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-63,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-80,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:00","Rssi":-93,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-95,"Ssid":"BeSpot776C_2.4"}}
+users/devices/location  {"FloorLevel":4,"x":"3","y":"18","z":"3","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:9E:60 	 12.589   -84     4  	 460
+B4:5D:50:BD:A4:60 	 14.125   -86     3  	 330
+B4:5D:50:BD:A3:C0 	 16.788   -89     4  	 440
+B4:5D:50:BD:9E:00 	 16.788   -89     5  	 560
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-80,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-88,"Ssid":"BeSpot776C_2.4"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-89,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"5","y":"19","z":"1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.309   -64     4  	 470
+B4:5D:50:BD:A0:80 	 7.079   -69     4  	 450
+B4:5D:50:BD:9E:60 	 12.589   -84     4  	 460
+B4:5D:50:BD:A4:60 	 14.125   -86     3  	 330
+B4:5D:50:BD:A3:C0 	 15.849   -88     4  	 440
+B4:5D:50:BD:9E:00 	 16.788   -89     5  	 560
+
+{"Battery":100,"NumberOfAccessPoints":8,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-64,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-69,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-79,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-84,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-89,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"5","y":"18","z":"1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:93:40 	 5.623   -65     4  	 470
+B4:5D:50:BD:A0:80 	 6.683   -68     4  	 450
+B4:5D:50:BD:A4:60 	 13.335   -85     3  	 330
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:A3:C0 	 23.714   -90     4  	 440
+B4:5D:50:BD:9E:00 	 23.714   -90     5  	 560
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-25,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:93:40","Rssi":-65,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-68,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-80,"Ssid":"DIRECT-oMWorkCentre 3025"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A4:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:00","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"80:C5:48:26:37:BC","Rssi":-92,"Ssid":"BeSpot776C_2.4"}}
+users/devices/location  {"FloorLevel":4,"x":"6","y":"22","z":"3","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+> Task :Main.main() FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':Main.main()'.
+> Build cancelled while executing task ':Main.main()'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 2m 6s
+2 actionable tasks: 1 executed, 1 up-to-date

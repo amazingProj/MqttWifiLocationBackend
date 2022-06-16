@@ -1,0 +1,148 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+
+> Task :Main.main()
+Connected successfully
+Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.661   -52     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.962   -87     4  	 460
+B4:5D:50:BD:C8:E0 	 23.714   -90     5  	 520
+B4:5D:50:BD:A0:80 	 23.714   -90     4  	 450
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-52,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-87,"Ssid":"Bezeq_WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-87,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"21.1","y":"?-0.4","z":"2.8","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.371   -50     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 15.849   -88     4  	 460
+B4:5D:50:BD:C8:E0 	 23.714   -90     5  	 520
+B4:5D:50:BD:A0:80 	 10.593   -91     4  	 450
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-50,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-88,"Ssid":"DIRECT-oMWorkCentre 3025"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-90,"Ssid":"Bezeq_WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"20.2","y":"7","z":"5.1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.239   -49     4  	 420
+B4:5D:50:BD:A3:C0 	 10.593   -76     4  	 440
+B4:5D:50:BD:9E:60 	 13.335   -85     4  	 460
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+B4:5D:50:BD:A0:80 	 11.220   -92     4  	 450
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-29,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-49,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-76,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-85,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-91,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-92,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"19.9","y":"6.4","z":"5.4","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.371   -50     4  	 420
+B4:5D:50:BD:A3:C0 	 12.589   -79     4  	 440
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:A0:80 	 23.714   -90     4  	 450
+B4:5D:50:BD:AC:A0 	 23.714   -90     3  	 302
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-50,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-79,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-87,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-88,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"23","y":"?-1","z":"6.1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.962   -87     4  	 460
+B4:5D:50:BD:A0:80 	 16.788   -89     4  	 450
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-86,"Ssid":"DIRECT-5F-HP OfficeJetPro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-89,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"21.3","y":"3.6","z":"2.5","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.962   -87     4  	 460
+B4:5D:50:BD:AC:A0 	 16.788   -89     3  	 302
+B4:5D:50:BD:A0:80 	 23.714   -90     4  	 450
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-29,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-88,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-88,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"21.9","y":"?-1.3","z":"5.2","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:A0:80 	 15.849   -88     4  	 450
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-86,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-87,"Ssid":"DIRECT-oMWorkCentre 3025"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-88,"Ssid":"Bezeq_WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"21.2","y":"4.5","z":"2.9","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.885   -78     4  	 440
+B4:5D:50:BD:9E:60 	 15.849   -88     4  	 460
+B4:5D:50:BD:C8:E0 	 10.593   -91     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+B4:5D:50:BD:A0:80 	 11.220   -92     4  	 450
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-78,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-86,"Ssid":"Bezeq_WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-88,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-92,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"20.6","y":"7","z":"5.2","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 10.593   -76     4  	 440
+B4:5D:50:BD:9E:60 	 15.849   -88     4  	 460
+B4:5D:50:BD:C8:E0 	 15.849   -88     5  	 520
+B4:5D:50:BD:AC:A0 	 23.714   -90     3  	 302
+B4:5D:50:BD:A0:80 	 10.593   -91     4  	 450
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":9,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-32,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-76,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-86,"Ssid":"DIRECT-5F-HP OfficeJetPro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-88,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-89,"Ssid":"Bezeq_WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"20.6","y":"7.3","z":"6.2","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.885   -78     4  	 440
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:C8:E0 	 16.788   -89     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+B4:5D:50:BD:A0:80 	 11.885   -93     4  	 450
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-30,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-78,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-86,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-89,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-90,"Ssid":"Bezeq_WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-93,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"20.6","y":"6.8","z":"4.7","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.125   -86     4  	 460
+B4:5D:50:BD:AC:A0 	 16.788   -89     3  	 302
+B4:5D:50:BD:A0:80 	 10.593   -91     4  	 450
+B4:5D:50:BD:C8:E0 	 11.220   -92     5  	 520
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-29,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-84,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-86,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-89,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-89,"Ssid":"DIRECT-oMWorkCentre 3025"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-91,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-92,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"20.4","y":"7.2","z":"6.1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}Bssid 			   Distance  Rssi   Floor   Room
+B4:5D:50:BD:AC:40 	 2.512   -51     4  	 420
+B4:5D:50:BD:A3:C0 	 11.220   -77     4  	 440
+B4:5D:50:BD:9E:60 	 14.962   -87     4  	 460
+B4:5D:50:BD:A0:80 	 16.788   -89     4  	 450
+B4:5D:50:BD:C8:E0 	 23.714   -90     5  	 520
+B4:5D:50:BD:AC:A0 	 10.593   -91     3  	 302
+Cores: 8, threads: 1
+
+{"Battery":100,"NumberOfAccessPoints":10,"MacAddress":"94:B9:7E:FA:92:14","WifiSsid":"AndroidAPFE24","1":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"62:FB:19:26:41:57","Rssi":-29,"Ssid":"AndroidAPFE24"},"2":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:40","Rssi":-51,"Ssid":"JCT-Lev-WiFi"},"3":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A3:C0","Rssi":-77,"Ssid":"JCT-Lev-WiFi"},"4":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"3A:22:E2:9D:D0:5F","Rssi":-85,"Ssid":"DIRECT-5F-HP OfficeJet Pro 9010"},"5":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:9E:60","Rssi":-87,"Ssid":"JCT-Lev-WiFi"},"6":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"10:BE:F5:36:C9:F2","Rssi":-88,"Ssid":"Bezeq_WiFi"},"7":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"9E:93:4E:3F:0A:3A","Rssi":-88,"Ssid":"DIRECT-oMWorkCentre 3025"},"8":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:A0:80","Rssi":-89,"Ssid":"JCT-Lev-WiFi"},"9":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:C8:E0","Rssi":-90,"Ssid":"JCT-Lev-WiFi"},"10":{"EspMacAddress":"94:B9:7E:FA:92:14","Bssid":"B4:5D:50:BD:AC:A0","Rssi":-91,"Ssid":"JCT-Lev-WiFi"}}
+users/devices/location  {"FloorLevel":4,"x":"21.2","y":"3.4","z":"2.1","ID":"94:B9:7E:FA:92:14","BATTERY":"0%"}
+> Task :Main.main() FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':Main.main()'.
+> Build cancelled while executing task ':Main.main()'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 2m 2s
+2 actionable tasks: 1 executed, 1 up-to-date
