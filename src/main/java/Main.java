@@ -9,8 +9,6 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
-
 import static com.hivemq.client.mqtt.MqttGlobalPublishFilter.ALL;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -87,6 +85,7 @@ public class Main {
         });
 
         /*
+        //wait 0 ms before doing the action and do it evry 1000ms (1second)
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -95,15 +94,29 @@ public class Main {
                 JsonObject result1 = new JsonObject();
                 Random rand = new Random();
                 int x = rand.nextInt(22);
-                int y = rand.nextInt(18);
+                int y = rand.nextInt(15);
                 int z = rand.nextInt(10);
                 result1.addProperty("x", x);
                 result1.addProperty("y", y);
                 result1.addProperty("z", z);
                 int floor = rand.nextInt(3) + 3;
                 result1.addProperty("FloorLevel", floor);
-                result1.addProperty("ID", "94:B9:7E:FA:92:14");
-                result1.addProperty("BATTERY", 50 + "%");
+                int rnd = rand.nextInt(3);
+                if (rnd == 1)
+                {
+                    result1.addProperty("ID", "94:B9:7E:FA:92:14");
+                }
+                else
+                {
+                    result1.addProperty("ID", "2023");
+                }
+
+                int bat = rand.nextInt(100);
+                result1.addProperty("BATTERY", bat + "%");
+                boolean f = (x % 2 == 0)? true : false;
+                String msg = (f) ? "Alarmed" : "Is not alarmed";
+                result1.addProperty("ISAlarmed", msg);
+                System.out.println(result1.toString());
                 client.publishWith()
                         .topic("users/devices/location")
                         .payload(UTF_8.encode(result1.toString()))
@@ -111,7 +124,9 @@ public class Main {
                         .send();
 
             }
-        }, 0, 10000);//wait 0 ms before doing the action and do it evry 1000ms (1second)
-*/
+        }, 0, 10000);
+
+
+         */
     }
 }

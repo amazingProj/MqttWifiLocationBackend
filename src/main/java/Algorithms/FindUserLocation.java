@@ -1,19 +1,20 @@
 package Algorithms;
 
 import Model.RssiError;
+import Model.ValidAccessPoint;
 import Utils.AccessPointLocation;
 import Utils.AccessPointSentByEsp32;
 import Utils.PayloadInformationSentByEsp32;
-import Model.ValidAccessPoint;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
+
 import java.text.NumberFormat;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 /**
  * class represents find user location class
@@ -39,6 +40,7 @@ public class FindUserLocation {
 
     /**
      * finds the location of a user in the building
+     *
      * @param obj - a json format message contains list of rssi
      * @return user location in x,y,z
      */
@@ -64,12 +66,12 @@ public class FindUserLocation {
         while (keys.hasNext()) {
             String key = keys.next();
 
-            if (key.matches("^[0-9]+")){
+            if (key.matches("^[0-9]+")) {
 
                 AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
 
                 temp = accessPoint.getBssid();
-                coordinates = temp == null? null : (AccessPointLocation) valid.obj.get(temp.toLowerCase());
+                coordinates = temp == null ? null : (AccessPointLocation) valid.obj.get(temp.toLowerCase());
 
                 if (coordinates != null) {
 
@@ -78,27 +80,11 @@ public class FindUserLocation {
                     accessPoint.setFloor(tempFloorLevel);
                     room = coordinates.getRoom();
                     accessPoint.setRoom(room);
-                    int mesuredPower = coordinates.getMeasuredPower();
 
-                    if (firstTime){
-                        closestRoom = room;
-                        floorLevel = tempFloorLevel;
-                        result.addProperty("FloorLevel", floorLevel);
-                        firstTime = false;
-                    }
-                    int actualRssi = accessPoint.getRssi();
-                    int error = rssiError.getError(closestRoom, temp.toLowerCase());
-                    if (error != -1)
-                    {
-                        actualRssi += error;
-                    }
-                    double distance = calc.CalculateDistanceByRssi(actualRssi);
-                    accessPoint.setDistance(distance);
                     information.addAccessPoint(accessPoint);
 
                 }
-            }
-           else if (key.equals("MacAddress")) {
+            } else if (key.equals("MacAddress")) {
 
                 information.setMacAddress(obj.get(key).getAsString());
 
@@ -114,12 +100,42 @@ public class FindUserLocation {
         }
 
         int numberOfValidAccessPoint = information.getAccessPointsLength();
-        if (numberOfValidAccessPoint  == 0) return null;
+        if (numberOfValidAccessPoint == 0) return null;
 
+        List<AccessPointSentByEsp32> accessPoints = information.getAccessPoints();
         AccessPointSentByEsp32 accessPoint;
 
-        if (numberOfValidAccessPoint == 1)
+        accessPoints.sort(Comparator.comparingDouble(AccessPointSentByEsp32::getRssi).reversed());
+        double distance;
+        for (int i = 0; i < numberOfValidAccessPoint; ++i) {
+            accessPoint = accessPoints.get(i);
+            if (firstTime) {
+                closestRoom = accessPoint.getRoom();
+                floorLevel = accessPoint.getFloor();
+                result.addProperty("FloorLevel", floorLevel);
+                firstTime = false;
+            }
+            int actualRssi = accessPoint.getRssi();
+
+
+            //int error = rssiError.getError(closestRoom, accessPoint.getBssid().toLowerCase());
+            //if (error != -1) {
+             //   actualRssi += error;
+           // }
+            distance = calc.CalculateDistanceByRssi(actualRssi);
+            accessPoint.setDistance(distance);
+
+
+        }
+
+        /*int arr[] = {11,14,14,11};
+        for (int i = 0; i < numberOfValidAccessPoint; ++i)
         {
+            accessPoints.get(i).setDistance(arr[i]);
+        }*/
+
+
+        if (numberOfValidAccessPoint == 1) {
             accessPoint = information.getAccessPoints().get(0);
             result.addProperty("x", accessPoint.getCoordinates().getX() - accessPoint.getDistance());
             result.addProperty("y", accessPoint.getCoordinates().getY());
@@ -133,9 +149,8 @@ public class FindUserLocation {
         }
 
 
-
         double[] distancesPrimitive = new double[numberOfValidAccessPoint];
-        List<AccessPointSentByEsp32> accessPoints = information.getAccessPoints();
+
 
         double[][] target = new double[numberOfValidAccessPoint][dimension];
         double distanceTemp;
@@ -152,10 +167,8 @@ public class FindUserLocation {
             target[i][2] = coordinates.getZ();
 
 
-
             distancesPrimitive[i] = distanceTemp;
         }
-
 
 
         NonLinearLeastSquaresSolver solver = new NonLinearLeastSquaresSolver(new TrilaterationFunction(target, distancesPrimitive), new LevenbergMarquardtOptimizer());

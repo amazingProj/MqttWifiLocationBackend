@@ -1,7 +1,5 @@
 package Utils;
 
-import Utils.AccessPointLocation;
-
 public class AccessPoint {
 
     private String EspMacAddress;

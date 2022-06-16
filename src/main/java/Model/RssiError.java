@@ -40,7 +40,7 @@ public class RssiError {
         );
         errors.put(450, map);
 
-        map.clear();
+        /*map.clear();
         map.put(
                 "b4:5d:50:bd:a4:60", -2
         );
@@ -53,7 +53,7 @@ public class RssiError {
         map.put(
                 "b4:5d:50:bd:a0:80", 16
         );
-        errors.put(330, map);
+        errors.put(330, map);*/
         map.clear();
         map.put(
                 "b4:5d:50:bd:ac:a0", 25

@@ -131,7 +131,6 @@ public class FindUserLocationAndroid {
             }
             distance = calc.CalculateDistanceByRssi(actualRssi);
             accessPoint.setDistance(distance);
-            accessPoint.setDistance(distance);
         }
 
 
