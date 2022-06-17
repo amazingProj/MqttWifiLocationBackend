@@ -5,11 +5,12 @@ import Model.Decoder;
 import Model.Esp32PayloadDecoder;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class EventsHandler {
     private List<Observer> observerListPublishLocationEvent = new ArrayList<>();
-    String message = "";
+    HashMap<String, String> messages = new HashMap<>();
 
     /**
      * adds a new observer
@@ -35,22 +36,28 @@ public class EventsHandler {
             int index = Integer.parseInt(arr[0]);
             int total = Integer.parseInt(arr[1]);
             String senderID = arr[2];
-            message += arr[3];
+            if (messages.containsKey(senderID))
+            {
+                String newVal = messages.get(senderID);
+                newVal += arr[3];
+                messages.put(senderID, newVal);
+            }
+            else
+            {
+                messages.put(senderID, arr[3]);
+            }
 
             if (index == total){
-                result = esp32PayloadDecoder.Decode(message);
-                System.out.println(message);
-                message = "";
+                result = esp32PayloadDecoder.Decode(messages.get(senderID));
+                messages.put(senderID, "");
             }
         }
         else if (topic.equals("mqtt/android/wifi/messages")){
-            // android topic
             final Decoder androidPayloadDecoder = new AndroidPayloadDecoder();
             result = androidPayloadDecoder.Decode(wifiScanMessage);
         }
 
         if (result == null) return;
-        // send the result
         notifyAllUserLocationObservers(result, "users/devices/location");
     }
 
@@ -62,9 +69,7 @@ public class EventsHandler {
     public void notifyAllUserLocationObservers(JsonObject message, String topic){
         if (observerListPublishLocationEvent.isEmpty()) return;
 
-        for (Observer observer
-        :
-        observerListPublishLocationEvent){
+        for (Observer observer : observerListPublishLocationEvent){
             observer.publishMessage(message, topic);
         }
     }

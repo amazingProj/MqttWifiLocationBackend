@@ -18,19 +18,17 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class Main {
     private static final EventsHandler eventsHandler = new EventsHandler();
+    private static final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
+    private static final String username = "Esp32";
+    private static final String password = "Esp32Asaf";
+    private static final String androidTopic = "mqtt/android/wifi/messages";
+    private static final String espTopic = "users/wifi/scan";
 
     /**
      * main program
      * @param args - arguments no use in our program
      */
     public static void main(String[] args) {
-
-         //  path, username and password to the cloud
-
-        final String host = "712d6a94edd544ddac8b5c44600f18d3.s1.eu.hivemq.cloud";
-        final String username = "Esp32";
-        final String password = "Esp32Asaf";
-
         final Mqtt5BlockingClient client = MqttClient.builder()
                 .useMqttVersion5()
                 .serverHost(host)
@@ -49,22 +47,15 @@ public class Main {
                         .password(UTF_8.encode(password))
                         .applySimpleAuth()
                         .send();
+
                 TimeUnit.SECONDS.sleep(1);
             }
-            catch (Exception e){
-
-            }
+            catch (Exception e){}
         }
         System.out.println("Connected successfully");
 
-        // init a global client subscribe to event handler which send a message to client's broker
         eventsHandler.addObserverPublishLocationEvent(new Sender(client));
 
-
-        // subscribe client to topic from the cloud
-
-        final String androidTopic = "mqtt/android/wifi/messages";
-        final String espTopic = "users/wifi/scan";
         client.subscribeWith()
                 .topicFilter(espTopic)
                 .qos(MqttQos.EXACTLY_ONCE)
@@ -79,12 +70,12 @@ public class Main {
         client.toAsync().publishes(ALL, publish -> {
             String messageReceived = UTF_8.decode(publish.getPayload().get()).toString();
             String topic = publish.getTopic().toString();
-            System.out.println("Received message: " + topic + " -> " + messageReceived);
             eventsHandler.messageArriveEvent(messageReceived, topic);
-            //client.disconnect();
         });
 
-        /*
+
+
+/*
         //wait 0 ms before doing the action and do it evry 1000ms (1second)
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -100,7 +91,7 @@ public class Main {
                 result1.addProperty("y", y);
                 result1.addProperty("z", z);
                 int floor = rand.nextInt(3) + 3;
-                result1.addProperty("FloorLevel", floor);
+                result1.addProperty("FloorLevel", 4);
                 int rnd = rand.nextInt(3);
                 if (rnd == 1)
                 {
@@ -108,7 +99,7 @@ public class Main {
                 }
                 else
                 {
-                    result1.addProperty("ID", "2023");
+                    result1.addProperty("ID", "AssafAndroid1010");
                 }
 
                 int bat = rand.nextInt(100);
@@ -125,8 +116,8 @@ public class Main {
 
             }
         }, 0, 10000);
+       */
 
 
-         */
     }
 }

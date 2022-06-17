@@ -67,22 +67,16 @@ public class FindUserLocation {
             String key = keys.next();
 
             if (key.matches("^[0-9]+")) {
-
                 AccessPointSentByEsp32 accessPoint = gson.fromJson(obj.get(key), AccessPointSentByEsp32.class);
-
                 temp = accessPoint.getBssid();
                 coordinates = temp == null ? null : (AccessPointLocation) valid.obj.get(temp.toLowerCase());
-
                 if (coordinates != null) {
-
                     accessPoint.setAccessPointLocation(new AccessPointLocation(coordinates));
                     tempFloorLevel = coordinates.getFloorLevel();
                     accessPoint.setFloor(tempFloorLevel);
                     room = coordinates.getRoom();
                     accessPoint.setRoom(room);
-
                     information.addAccessPoint(accessPoint);
-
                 }
             } else if (key.equals("MacAddress")) {
 
@@ -93,9 +87,10 @@ public class FindUserLocation {
                 information.setAlarmed(obj.get(key).getAsBoolean());
 
             } else if (key.equals("NumberOfAccessPoints")) {
-
                 information.setNumberOfAccessPoints(obj.get(key).getAsInt());
-
+            }
+            else if (keys.equals("BATTERY")) {
+                information.setBattery(obj.get(key).getAsInt());
             }
         }
 
@@ -118,33 +113,23 @@ public class FindUserLocation {
             int actualRssi = accessPoint.getRssi();
 
 
-            //int error = rssiError.getError(closestRoom, accessPoint.getBssid().toLowerCase());
-            //if (error != -1) {
-             //   actualRssi += error;
-           // }
+            int error = rssiError.getError(closestRoom, accessPoint.getBssid().toLowerCase());
+            if (error != -1) {
+               actualRssi += error;
+            }
             distance = calc.CalculateDistanceByRssi(actualRssi);
             accessPoint.setDistance(distance);
 
 
         }
 
-        /*int arr[] = {11,14,14,11};
-        for (int i = 0; i < numberOfValidAccessPoint; ++i)
-        {
-            accessPoints.get(i).setDistance(arr[i]);
-        }*/
-
-
         if (numberOfValidAccessPoint == 1) {
             accessPoint = information.getAccessPoints().get(0);
             result.addProperty("x", accessPoint.getCoordinates().getX() - accessPoint.getDistance());
             result.addProperty("y", accessPoint.getCoordinates().getY());
-
             result.addProperty("z", accessPoint.getCoordinates().getZ() - 0.5);
-
-
             result.addProperty("ID", information.getMacAddress());
-            //result.addProperty("BATTERY", information.getBattery() + "%");
+            result.addProperty("BATTERY", information.getBattery() + "%");
             return result;
         }
 
@@ -159,14 +144,10 @@ public class FindUserLocation {
             distanceTemp = accessPoint.getDistance();
             System.out.printf("%s \t %.3f   %d     %d  \t %d\n", accessPoint.getBssid(), distanceTemp, accessPoint.getRssi(),
                     accessPoint.getFloor(), accessPoint.getRoom());
-
             coordinates = accessPoint.getCoordinates();
             target[i][0] = coordinates.getX();
             target[i][1] = coordinates.getY();
-
             target[i][2] = coordinates.getZ();
-
-
             distancesPrimitive[i] = distanceTemp;
         }
 
@@ -179,12 +160,9 @@ public class FindUserLocation {
         double z = centroid[2];
         result.addProperty("x", nf.format(centroid[0]));
         result.addProperty("y", nf.format(centroid[1]));
-
         result.addProperty("z", nf.format(z));
-
-
         result.addProperty("ID", information.getMacAddress());
-        //result.addProperty("BATTERY", information.getBattery() + "%");
+        result.addProperty("BATTERY", information.getBattery() + "%");
         return result;
     }
 }

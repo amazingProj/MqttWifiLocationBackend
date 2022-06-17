@@ -1,9 +1,5 @@
 package Algorithms;
 
-import Algorithms.DistanceCalculator;
-import Algorithms.NonLinearLeastSquaresSolver;
-import Algorithms.TrilaterationFunction;
-import Model.ClosestRoom;
 import Model.RssiError;
 import Utils.*;
 import Model.ValidAccessPoint;
@@ -29,37 +25,7 @@ public class FindUserLocationAndroid {
         rssiError = new RssiError();
     }
 
-    class route {
-        private String accessPoint;
-        private Double distances;
-        private AccessPointLocation coordinates;
-
-        public route(String _accessPoint, Double _distances, AccessPointLocation _accessPointLocation) {
-            accessPoint = _accessPoint;
-            distances = _distances;
-            coordinates = _accessPointLocation;
-        }
-
-        public route(String _accessPoint, Double _distances) {
-            accessPoint = _accessPoint;
-            distances = _distances;
-        }
-    }
-
     public JsonObject FindAndroidUserLocation(JsonObject obj) {
-        /*
-        JsonObject result1 = new JsonObject();
-        Random rand = new Random();
-        int x = rand.nextInt(22);
-        int y = rand.nextInt(18);
-        int z = rand.nextInt(10);
-        result1.addProperty("x", x);
-        result1.addProperty("y", y);
-        result1.addProperty("z", z);
-        result1.addProperty("ID", "94:B9:7E:FA:92:14");
-        result1.addProperty("BATTERY", 50 + "%");
-        return result1;*/
-
         boolean firstTime = true;
         int tempFloorLevel;
         int room;
@@ -94,7 +60,6 @@ public class FindUserLocationAndroid {
                     accessPoint.setAccessPointLocation(new AccessPointLocation(coordinates.getX(), coordinates.getY(), coordinates.getZ()));
                     accessPoint.setFloor(coordinates.getFloorLevel());
                     accessPoint.setRoom(coordinates.getRoom());
-
                     information.addAccessPoint(accessPoint);
                 }
             } else if (key.equals("specialIdNumber")) {
@@ -104,6 +69,9 @@ public class FindUserLocationAndroid {
             } else if (key.equals("NumberOfAccessPoints")) {
                 information.setNumberOfAccessPoint(obj.get(key).getAsInt());
             }
+            else if (keys.equals("BATTERY")) {
+                information.setBattery(obj.get(key).getAsInt());
+            }
         }
 
         int numberOfValidAccessPoint = information.getAccessPointsLength();
@@ -111,7 +79,6 @@ public class FindUserLocationAndroid {
 
         AccessPoint accessPoint;
         List<AccessPoint> accessPoints = information.getAccessPoints();
-
         accessPoints.sort(Comparator.comparingDouble(AccessPoint::getRssi).reversed());
 
         for (int i = 0; i < numberOfValidAccessPoint; ++i)
@@ -123,7 +90,6 @@ public class FindUserLocationAndroid {
                 result.addProperty("FloorLevel", floorLevel);
                 firstTime = false;
             }
-
             int actualRssi = accessPoint.getRssi();
             int error = rssiError.getError(closestRoom, accessPoint.getBssid().toLowerCase());
             if (error != -1) {
@@ -132,9 +98,6 @@ public class FindUserLocationAndroid {
             distance = calc.CalculateDistanceByRssi(actualRssi);
             accessPoint.setDistance(distance);
         }
-
-
-
 
         double[] distancesPrimitive = new double[numberOfValidAccessPoint];
 
@@ -145,14 +108,10 @@ public class FindUserLocationAndroid {
             distanceTemp = accessPoint.getDistance();
             System.out.printf("%s \t %.3f   %d     %d  \t %d %s\n", accessPoint.getBssid(), distanceTemp, accessPoint.getRssi(),
                     accessPoint.getFloor(), accessPoint.getRoom(), accessPoint);
-
             coordinates = accessPoint.getCoordinates();
             target[i][0] = coordinates.getX();
             target[i][1] = coordinates.getY();
-
             target[i][2] = coordinates.getZ();
-
-
             distancesPrimitive[i] = distanceTemp;
         }
 
@@ -162,29 +121,11 @@ public class FindUserLocationAndroid {
         solver.setThreads(1);
         LeastSquaresOptimizer.Optimum optimum = solver.solve();
         double[] centroid = optimum.getPoint().toArray();
-        double z = centroid[2];
-        ClosestRoom closestRoom1 = new ClosestRoom();
-        Coordinates hashMap = closestRoom1.coordinatesHashMap.get(closestRoom);
-        if (hashMap != null)
-        {
-            double x = (hashMap.getX() + centroid[0]) / 2;
-            result.addProperty("x", nf.format(x));
-            double y = (centroid[1] + hashMap.getY()) / 2;
-            result.addProperty("y", nf.format(y));
-            double z1 = (z + hashMap.getZ()) / 2;
-            result.addProperty("z", nf.format(z1));
-        }
-        else
-        {
-            result.addProperty("x", nf.format(centroid[0]));
-            result.addProperty("y", nf.format(centroid[1]));
-            result.addProperty("z", nf.format(z));
-        }
-
-
-
+        result.addProperty("x", nf.format(centroid[0]));
+        result.addProperty("y", nf.format(centroid[1]));
+        result.addProperty("z", nf.format(centroid[2]));
         result.addProperty("ID", information.getSpecialId());
-        //result.addProperty("BATTERY", information.getBattery() + "%");
+        result.addProperty("BATTERY", information.getBattery() + "%");
         return result;
 
     }

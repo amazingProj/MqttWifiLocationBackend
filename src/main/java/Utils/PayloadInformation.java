@@ -8,7 +8,7 @@ import java.util.List;
 public class PayloadInformation {
 
     /******************************** Properties *******************************************/
-
+    Integer battery;
     String specialId;
     int numberOfAccessPoint;
     boolean isAlarmed;
@@ -30,6 +30,14 @@ public class PayloadInformation {
             return;
         }
         accessPoints.add(accessPoint);
+    }
+
+    public Integer getBattery() {
+        return battery;
+    }
+
+    public void setBattery(Integer battery) {
+        this.battery = battery;
     }
 
     public void setAccessPoints(List<AccessPoint> accessPoints) {
