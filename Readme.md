@@ -74,7 +74,65 @@ according to researches we have read.
 
 ````
 
-You can see explanation later in this  document.
+## Controller
+
+Observer Pattern Architecture in this folder.
+Including observer interface, event handler and send class to the cloud
+which is responsible for send the final answer.
+
+### Event handler major function
+
+```` java
+  public void messageArriveEvent(String wifiScanMessage, String topic){
+        JsonObject result = null;
+
+        if (topic.equals("users/wifi/scan")){
+            // esp 32 topic
+            final Decoder esp32PayloadDecoder = new Esp32PayloadDecoder();
+            String[] arr = wifiScanMessage.split(",|\\s+", 4);
+            int index = Integer.parseInt(arr[0]);
+            int total = Integer.parseInt(arr[1]);
+            String senderID = arr[2];
+            if (messages.containsKey(senderID))
+            {
+                String newVal = messages.get(senderID);
+                newVal += arr[3];
+                messages.put(senderID, newVal);
+            }
+            else
+            {
+                messages.put(senderID, arr[3]);
+            }
+
+            if (index == total){
+                result = esp32PayloadDecoder.Decode(messages.get(senderID));
+                messages.put(senderID, "");
+            }
+        }
+        else if (topic.equals("mqtt/android/wifi/messages")){
+            final Decoder androidPayloadDecoder = new AndroidPayloadDecoder();
+            result = androidPayloadDecoder.Decode(wifiScanMessage);
+        }
+
+        if (result == null) return;
+        notifyAllUserLocationObservers(result, "users/devices/location");
+    }
+
+````
+
+### Sender major function
+
+```` java
+ public void publishMessage(JsonObject payload, String topic) {
+        clientSender.publishWith()
+                .topic(topic)
+                .payload(UTF_8.encode(payload.toString()))
+                .qos(MqttQos.EXACTLY_ONCE)
+                .send();
+        System.out.printf("%s  %s\n\n", topic, payload);
+    }
+````
+
 
 
 ## Main program 
@@ -119,4 +177,4 @@ eventsHandler.messageArriveEvent(messageReceived, topic);
 received message in JSON format of a certain topic, 
 deserialized  it into classes 
 so 
-one topic is for android and one for esp32
+one topic is for android and one for esp32.
