@@ -48,7 +48,7 @@ public class FindUserLocation {
 
         if (obj == null) return null;
 
-        int floorLevel = 0;
+        int floorLevel;
 
         DistanceCalculator calc = new DistanceCalculator();
         JsonObject result = new JsonObject();

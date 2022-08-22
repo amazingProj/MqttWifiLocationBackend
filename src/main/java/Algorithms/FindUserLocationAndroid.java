@@ -31,7 +31,7 @@ public class FindUserLocationAndroid {
         int room;
         int closestRoom = 0;
         String temp;
-        int floorLevel = 0;
+        int floorLevel;
 
         if (obj == null) return null;
 
